@@ -1,2 +1,2 @@
 # the-grid
-Yeaaaahhhhh
+Projects featuring the latest developments in web technology
