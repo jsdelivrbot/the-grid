@@ -1,0 +1,1052 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<style>
+
+.outputinfo
+{
+position: absolute;
+top: 50px;
+left: 50px;
+width: 100px;
+height: 100px;
+text-align: center;
+border: 1px solid black;
+}
+
+.startbutton
+{
+position: absolute;
+top: 50px;
+left: 160px;
+width: 320px;
+height: 180px;
+background-color: skyblue;
+text-align: center;
+padding-left: 10px;
+padding-right: 10px;
+z-index: 10;
+}
+
+.base
+{
+position: absolute;
+top: 270px;
+left: 20px;
+ width: 85px;
+    height: 125px;
+    background-image: url("http://image.wikifoundry.com/image/3/CCgaBNPsqDxj8PDGpQOJww61899");
+background-size: 680px 250px;
+z-index: 10;
+transform: scaleX(1);
+
+animation: stand 2s steps(4) infinite;
+}
+@keyframes stand
+{
+    from { background-position: 0px -125px; }
+    to { background-position: -340px -125px; }
+}
+.ground
+{
+position: absolute;
+top: 370px;
+left: -10px;
+width: 680px;
+height: 100px;
+background-image: url("http://image.wikifoundry.com/image/3/c159v-vZZv2lUpnYi0fw6g987");
+background-position: 0px 0px;
+background-size: 690px 100px;
+z-index: 2;
+visibility: hidden;
+}
+.background
+{
+position: absolute;
+top: -50px;
+left: 0px;
+width: 670px;
+height: 460px;
+background-image: url("http://image.wikifoundry.com/image/3/rK5Pe3cQ8EgO2D3FTqtc3g15140");
+background-size: 670px 500px;
+z-index: -1;
+}
+.display
+{
+position: absolute;
+top: 50px;
+left: 250px;
+color: skyblue;
+height: 100px;
+width: 200px;
+}
+
+.hi {
+position: absolute;
+    width: 85px;
+    height: 125px;
+    background-image: url("http://image.wikifoundry.com/image/3/CCgaBNPsqDxj8PDGpQOJww61899");
+    background-size: 680px 250px;
+z-index: 10;
+animation: play .8s steps(8) infinite;
+    } 
+
+
+@keyframes play {
+    from { background-position:    0px 0px;}
+     to { background-position: -680px 0px;}
+}
+.treesprite
+{
+position: absolute;
+top: 245px;
+left: 250px;
+width: 200px;
+height: 200px;
+background-image: url("http://image.wikifoundry.com/image/3/4zkM6QgO-76XmPuRUCJNHA6580");
+}
+#tree
+{
+background-size: 300px 200px;
+background-position: -100px 0px;
+z-index: 2;
+}
+#jetpack
+{
+top: 350px;
+left: 170px;
+width: 80px;
+height: 100px;
+background-size: 280px 180px;
+background-position: -10px 0px;
+z-index: 2;
+}
+.astrorobot
+{
+position: absolute;
+top: 180px;
+left: 425px;
+height: 230px;
+width: 250px;
+background-image: url("http://image.wikifoundry.com/image/3/n3FXtaUVlF1TfUscKJDv4w15199");
+background-size: 250px 230px;
+transform: scaleX(-1);
+z-index: 5
+}
+.aliencolumn
+{
+position: absolute;
+top: 280px;
+left: 390px;
+width: 100px;
+height: 150px;
+background-image: url("http://image.wikifoundry.com/image/3/-fE-34J5agSMSYd0dSkpHg21822");
+background-position: -70px 0px;
+background-size: 350px 300px;
+z-index: 6;
+}
+.loadingscreen
+{
+position: absolute;
+top: 0px;
+left: 0px;
+width: 700px;
+height: 500px;
+background-color: white;
+z-index:15;
+text-align: center;
+font-size: 30px;
+padding-top: 100px;
+}
+.alienlaser
+{
+position: absolute;
+top: 0px;
+left: 0px;
+width: 50px;
+height: 12px;
+background-image: url("http://image.wikifoundry.com/image/3/oXrndSsWYWuV2b-RBcXRlA456");
+background-size: 50px 12px;
+z-index: 5;
+/visibility: hidden;
+}
+.notvisible
+{
+visibility: hidden;
+}
+.rightside
+{
+position: absolute;
+top: 0px;
+left: 660px;
+width: 170px;
+height: 500px;
+background-color: white;
+z-index: 15;
+}
+.vehicle
+{
+position: absolute;
+top: 210px;
+left: 200px;
+width: 360px;
+height: 200px;
+background-image: url("http://image.wikifoundry.com/image/3/EG4OaBIjAtDUKrJDVgg9Ng23377");
+background-position: -280px -650px;
+visibility: hidden;
+z-index: 3;
+}
+.winmessage
+{
+position: absolute;
+top: 100px;
+left: 150px;
+width: 300px;
+height: 150px;
+background-image: url("http://image.wikifoundry.com/image/3/KmZcP-wKHgp88b5ihTTUCw3047");
+background-size: 300px 150px;
+visibility: hidden;
+z-index: 14;
+}
+.faction3sprite
+{
+position: absolute;
+/background-image: /url("http://image.wikifoundry.com/image/3/QEupXT1ONctxx00CtEPjGA13185");
+width: 100px;
+height: 140px;
+background-image: url('http://image.wikifoundry.com/image/3/YMObT8CSmIvN_uRTSUGZbg2923');
+background-size: 100px 140px;
+z-index: 20;
+visibility: hidden;
+}
+/#robot1
+/{
+
+
+/}
+.explosionsprite
+{
+position: absolute;
+/top: 0px;
+/left: 0px;
+width: 100px;
+height: 100px;
+background-image: url("http://image.wikifoundry.com/image/3/fX94t54Q2bURls8pjk2MKA24917");
+animation: flash1 0.5s steps(10) forwards;
+}
+
+@keyframes flash1
+{
+0% {background-position: 0px; }
+99% { opacity: 1; }
+100% { background-position: -1000px; opacity: 0;}
+}
+.alientool
+{
+position: absolute;
+width: 150px;
+height: 50px;
+background-image: url("http://image.wikifoundry.com/image/3/KaOBmeWHZ4lWjhgV1Sa9-g1585");
+background-size: 150px 50px;
+transform: scaleX(-1);
+z-index: 12;
+}
+
+.faction3laser
+{
+position: absolute;
+top: 100px;
+left: 10px;
+width: 78px;
+height: 50px;
+background-image: url("http://image.wikifoundry.com/image/3/QEupXT1ONctxx00CtEPjGA13185");
+background-position: -170px -290px;  
+background-size: 400px 500px; 
+}
+.startmenu 
+{
+position: absolute;
+top: 0px;
+left: 0px;
+width: 680px;
+height: 460px;
+background-image: url("http://image.wikifoundry.com/image/3/mBvUajAE7lbqG7e1niNW6A13919");
+z-index: 14;
+background-repeat: no-repeat;
+}
+.startstuff
+{
+background-image: url("http://image.wikifoundry.com/image/3/t3iXKdNAG9eDdgNy-YOuKQ3135");
+}
+#startbutton
+{
+position: absolute;
+top: 220px;
+left: 230px;
+width: 170px;
+height: 68px;
+background-position: 0px -5px;
+}
+#startbutton:hover
+{
+background-position: -167px -6px;
+cursor: pointer;
+}
+#entercode
+{
+position: absolute;
+top: 280px;
+left: 90px;
+width: 200px;
+height: 70px;
+background-position: -30px -72px;
+}
+textarea:focus, input:focus
+{
+outline: none;
+border: none;
+}
+#codetextbox
+{
+position: absolute;
+top: 280px;
+left: 290px;
+width: 320px;
+height: 70px;
+background-position: -45px -160px;
+background-color: transparent;
+border: none;
+padding-left: 25px;
+padding-bottom: 10px;
+}
+#codebutton
+{
+position: absolute;
+top: 275px;
+left: 590px;
+width: 50px;
+height: 80px;
+background-position: -280px -80px;
+}
+#codebutton:hover
+{
+top: 251px;
+left: 583px;
+background-position: -330px -55px;
+height: 100px;
+width: 60px;
+cursor: pointer;
+}
+.workswithbox
+{
+position: absolute;
+top: 350px;
+left: 100px;
+width: 450px;
+height: 20px;
+padding-left: 30px;
+padding-top: 5px;
+padding-bottom: 5px;
+background-color: saddlebrown;
+color: #33ADFF;
+font-family: Arial bold;
+font-size: 90%;
+border: 5px solid black;
+border-radius: 25px;
+}
+</style>
+</head>
+<body onload="begingame()" >
+
+
+<div class="startmenu" id="startmenu">
+<div class="workswithbox" >Game works with <font color="cyan" >Google Chrome </font>and <font color="orange" >Mozilla Firefox</font></div>  
+<div class="startstuff" id="startbutton" onclick="beginthegame()" ></div> 
+<div class="startstuff" id="entercode" ></div>
+<input class="startstuff" id="codetextbox" style="font-size: 20px; color: Lime; " maxlength="20" ></input>
+<div class="startstuff" id="codebutton" onclick="submitcode()" ></div>
+</div>
+<div class="startbutton" id="start" ><p>Instructions</p><p>Press w to jump, a to walk left, and d to walk right</p><p>Use the semi-colon key (;) to fire the alien laser.  Get to the end of the level.  Click start to begin the game.</p><p onclick="startgame()" style="cursor: pointer; background-color: orange; " >Start</p></div>
+<div class="base" id="base1" ></div>
+<div class="ground" ></div>
+<div class="display" id="display" ></div>
+<div class="background" id="background" ></div>
+<div class="notvisible" >
+<div class="treesprite" id="tree" ></div>
+<div class="treesprite" id="jetpack" ></div>
+<div class="astrorobot" ></div>
+<div class="aliencolumn" ></div>
+</div>
+<div class="alienlaser" id="alienlaser1" ></div>
+<div class="alienlaser" id="alienlaser2" ></div>
+<div class="alienlaser" id="alienlaser3" ></div>
+<div class="vehicle" id="astrovehicle" ></div>
+<div class="alientool" id="alientool" ></div>
+<div class="winmessage" id="winmessage" ></div>
+<div class="faction3sprite" id="robot1" ></div>
+<div class="faction3laser" id="robotlaser" ></div>
+<div class="explosionsprite" id="explosionsprite" ></div> 
+<div class="loadingscreen" id="loadingscreen" ><p>Loading...</p></div>
+<div class="rightside" ></div>
+</body>
+
+<script type="text/javascript" >
+
+/*
+//var degrees = 90;
+//var calculatedpowerX = 0;
+//var calculatedpowerY = 0; 
+ //<input id="inputvelocity"  >
+//degrees: 
+//<input id="degreeinput" type="text" >
+//<div class="outputinfo" id="outputtext" onclick="calculatepower()" ></div>
+*/
+function beginthegame()
+{
+document.getElementById('startmenu').style.visibility='hidden';
+}
+
+var lasersfired = 0;
+var alienlasers = 3;
+var alienlaser1status = 'notfired';
+var alienlaser2status = 'notfired';
+var alienlaser3status = 'notfired';
+
+var robotstatus2 = 'nocontact';
+
+
+var imagesloaded = 0;
+function addimage()
+{
+imagesloaded+= 1;
+}
+backgroundimage = new Image()
+backgroundimage.src="http://image.wikifoundry.com/image/3/_1OcP4CvblFUnKqh7nbGHQ84375"
+backgroundimage.onload = addimage();
+
+wallsandpillars = new Image()
+wallsandpillars.src="http://image.wikifoundry.com/image/3/-fE-34J5agSMSYd0dSkpHg21822"
+wallsandpillars.onload = addimage();
+
+treeandjetpack = new Image()
+treeandjetpack.src="http://image.wikifoundry.com/image/3/4zkM6QgO-76XmPuRUCJNHA6580"
+treeandjetpack.onload = addimage();
+
+dirtground = new Image()
+dirtground.src="http://image.wikifoundry.com/image/3/c159v-vZZv2lUpnYi0fw6g987"
+dirtground.onload = addimage();
+
+aliensprites = new Image()
+aliensprites.src = "http://image.wikifoundry.com/image/3/CCgaBNPsqDxj8PDGpQOJww61899"
+aliensprites.onload = addimage();
+
+astrorobot = new Image()
+astrorobot.src="http://image.wikifoundry.com/image/3/n3FXtaUVlF1TfUscKJDv4w15199"
+astrorobot.onload = addimage();
+
+alienlaserimage = new Image()
+alienlaserimage.src="http://image.wikifoundry.com/image/3/2s5oL_2oY2PYI0Gmw9PIqw1015"
+alienlaserimage.onload = addimage();
+
+startingAreaImage = new Image()
+startingAreaImage.src="http://image.wikifoundry.com/image/3/rK5Pe3cQ8EgO2D3FTqtc3g15140"
+startingAreaImage.onload= addimage();
+
+flatplainImage = new Image()
+flatplainImage.src="http://image.wikifoundry.com/image/3/tYc3cu_iH5cZUldasSSX4Q2471"
+flatplainImage.onload= addimage();
+
+plateauImage = new Image()
+plateauImage.src="http://image.wikifoundry.com/image/3/25MWKnCq85dMu4LEmHpgQA3605"
+plateauImage.onload = addimage();
+
+winmessageImage = new Image()
+winmessageImage.src="http://image.wikifoundry.com/image/3/KmZcP-wKHgp88b5ihTTUCw3047"
+winmessageImage.onload = addimage();
+
+marsbackgroundImage = new Image()
+marsbackgroundImage.src="http://image.wikifoundry.com/image/3/x8Sft3aVEQQ7-AQuYV6iOw327401"
+marsbackgroundImage.onload = addimage();
+
+fortressImage = new Image()
+fortressImage.src="http://image.wikifoundry.com/image/3/rsZbSspjJsYTuyEiIsh-kQ11685"
+fortressImage.onload = addimage();
+
+faction3sprites = new Image()
+faction3sprites.src="http://image.wikifoundry.com/image/3/QEupXT1ONctxx00CtEPjGA13185"
+faction3sprites.onload = addimage();
+var faction3spriteurl = "http://image.wikifoundry.com/image/3/QEupXT1ONctxx00CtEPjGA13185"
+
+robot1Image = new Image()
+robot1Image.src="http://image.wikifoundry.com/image/3/YMObT8CSmIvN_uRTSUGZbg2923"
+robot1Image.onload = addimage();
+
+greenlaserImage = new Image()
+greenlaserImage.src="http://image.wikifoundry.com/image/3/oXrndSsWYWuV2b-RBcXRlA456"
+greenlaserImage.onload = addimage();
+
+alientoolImage = new Image()
+alientoolImage.src="http://image.wikifoundry.com/image/3/KaOBmeWHZ4lWjhgV1Sa9-g1585"
+alientoolImage.onload = addimage();
+
+explosionsprite = new Image()
+explosionsprite.src="http://image.wikifoundry.com/image/3/fX94t54Q2bURls8pjk2MKA24917"
+explosionsprite.onload = addimage();
+
+startmenuimage = new Image()
+startmenuimage.src="http://image.wikifoundry.com/image/3/mBvUajAE7lbqG7e1niNW6A13919"
+startmenuimage.onload = addimage();
+
+startbuttonsimage = new Image()
+startbuttonsimage.src="http://image.wikifoundry.com/image/3/t3iXKdNAG9eDdgNy-YOuKQ3135"
+startbuttonsimage.onload = addimage();
+
+function begingame()
+{
+if (imagesloaded == 20)
+{
+document.getElementById('loadingscreen').style.visibility='hidden';
+}
+}
+
+/* the levels */
+
+/* the player starts on the first level */
+var level = 1;
+/* the player's goal for that level */
+var objective = 'Get to the alien transport';
+/* where the player is in the level */
+var playerLocation = 'startingarea';
+var jumpstatus = 'landed';
+ 
+var alienlaser1location = document.getElementById('alienlaser1');
+var alienlaser2location = document.getElementById('alienlaser2');
+var alienlaser3location = document.getElementById('alienlaser3');
+
+var keysDown = {};
+
+addEventListener("keydown", function (e) {
+	keysDown[e.keyCode] = true;
+}, false);
+
+addEventListener("keyup", function (e) {
+	delete keysDown[e.keyCode];
+}, false);
+
+
+/* //function calculatepower()
+//{
+//var totalvelocity = document.getElementById('inputvelocity').value;
+//var degrees = document.getElementById('degreeinput').value;
+//var sineofdegree = Math.sin(degrees*Math.PI/180); 
+//var cosineofdegree = Math.cos(degrees *Math.PI/180);
+//calculatedpowerX = Math.round(totalvelocity*sineofdegree*100)/100;
+//calculatedpowerY = Math.round(totalvelocity*cosineofdegree*100)/100;
+//document.getElementById('outputtext').innerHTML = 'velocity X: ' + //calculatedpowerX + ' velocityY: ' + calculatedpowerY + ' //sine: ' + sineofdegree;  
+//}
+*/
+
+/* touch test for two objects */
+ function touchtest ( object1, object2)
+{ 
+if ( object1.x < object2.x + object2.width 
+ && object2.x < object1.x + object2.width 
+ && object1.y < object2.y + object2.height
+ && object2.y < object1.y + object1.height ) 
+
+ return 'objectsaretouching' 
+
+}
+
+
+
+function startgame()
+{
+document.getElementById('start').style.visibility= 'hidden'; 
+
+setInterval(game, 50);    
+} 
+
+/* player variable */
+var player = {
+x: 10,
+y: 270,
+location: document.getElementById('base1'),
+VelocityX: 2,
+VelocityY: 20,
+AccelerationX: 0,
+AccelerationY: 2,
+width: 85,
+height: 125,
+direction: 'right'
+};
+
+/* alienlaser1 variable */
+var alienlaser1 = {
+x: player.x + 20,
+y: 0,
+velocityX: 0,
+width: 50,
+height: 12
+};
+
+/* alienlaser2 variable */
+var alienlaser2 = {
+x: player.x + 20,
+y: 0,
+velocityX: 0,
+width: 50,
+height: 12
+};
+
+/* alienlaser3 variable */
+var alienlaser3 = {
+x: player.x + 20,
+y: 0,
+velocityX: 0,
+width: 50,
+height: 12
+};
+
+/ *robot1 variable */
+var robot1 = {
+x: 500,
+y: 260,
+status: 'going left',
+VelocityX: 0,
+VelocityY: 0,
+width: 100,
+height: 140
+};
+
+/* robot1 laser variable */
+var robot1laser = {
+x: robot1.x - 50,
+y: robot1.y + 50,
+VelocityX: 0,
+width: 78,
+height: 50
+};
+
+
+var playerArmor = 100;
+var robot1Armor= 10;
+var status1 = 0;
+var status2 = 0;
+var status3 = 0;
+
+function submitcode()
+{
+if ( document.getElementById('codetextbox').value === "amazing" )
+{
+playerArmor = 150;
+document.getElementById('codetextbox').value = 'more armor!';
+setTimeout( function(){ document.getElementById('codetextbox').value = '' }, 3000 );
+document.getElementById('codetextbox').focus();
+}
+else
+{
+document.getElementById('codetextbox').value = 'invalid code';
+setTimeout( function(){ document.getElementById('codetextbox').value = '' }, 3000 );
+document.getElementById('codetextbox').focus();
+}
+}
+
+function game() 
+{ 
+
+
+
+player.VelocityX += player.AccelerationX;
+player.VelocityY -= player.AccelerationY;
+
+player.x += player.VelocityX;
+player.y -= player.VelocityY;
+player.location.style.left = player.x + 'px';
+player.location.style.top = player.y + 'px';  
+/* document.getElementById('display').innerHTML= 'y velocity: ' + player.VelocityY + ' x velocity: ' + player.VelocityX + 'player location: ' + playerLocation + 'player.x: ' + player.x + 'robot status: ' + robot1.status + 'robot.x: ' + robot1.x + 'robot.y ' + robot1.y + ' alien laser x ' + alienlaser1.x + 'alien laser y ' + alienlaser1.y + 'robot status 2: ' + robotstatus2 + robot1Armor + robot1.status ; */
+document.getElementById('display').innerHTML= 'y velocity: ' + player.VelocityY + ' x velocity: ' + player.VelocityX + '<p>' + ' Player armor: ' + playerArmor + ' robot armor: ' + robot1Armor + '</p><p>' + 'Goal: Get to the 5th area of the level at the alien base.  ' + '</p>' ;
+alienlaser1.x +=alienlaser1.velocityX;
+alienlaser1location.style.top= (alienlaser1.y) + 'px';
+alienlaser1location.style.left= (alienlaser1.x) + 'px';
+alienlaser2.x +=alienlaser2.velocityX;
+alienlaser2location.style.top= (alienlaser2.y) + 'px';
+alienlaser2location.style.left= (alienlaser2.x) + 'px';
+alienlaser3.x +=alienlaser3.velocityX;
+alienlaser3location.style.top= (alienlaser3.y) + 'px';
+alienlaser3location.style.left= (alienlaser3.x) + 'px';
+document.getElementById('alientool').style.top= player.y + 40 + 'px';
+robot1.x+= robot1.VelocityX;
+robot1laser.x += robot1laser.VelocityX;
+document.getElementById('robotlaser').style.top= robot1laser.y + 'px';
+document.getElementById('robotlaser').style.left= robot1laser.x + 'px';
+
+if (document.getElementById('base1').style.transform==='scaleX(1)')
+{
+document.getElementById('alientool').style.transform='scaleX(-1)';
+document.getElementById('alientool').style.left=player.x + 'px';
+}
+else if (document.getElementById('base1').style.transform==='scaleX(-1)')
+{
+document.getElementById('alientool').style.transform='scaleX(1)';
+document.getElementById('alientool').style.left=player.x - 60 + 'px';
+}
+else
+{
+document.getElementById('alientool').style.transform='scaleX(-1)';
+document.getElementById('alientool').style.left=player.x + 'px';
+}
+
+
+if (playerLocation === 'plateauArea' )
+{
+document.getElementById('astrovehicle').style.visibility='visible';
+}
+else
+{
+document.getElementById('astrovehicle').style.visibility='hidden';
+}
+if (playerLocation === 'alienbase2' && player.x >= 300 )
+{
+document.getElementById('winmessage').style.visibility='visible';
+}
+else
+{
+document.getElementById('winmessage').style.visibility='hidden';
+}
+ if(player.y >= 260 )  
+{
+player.VelocityX=0;
+player.VelocityY=0; 
+player.AccelerationX=0;
+player.AccelerationY=0;
+
+}
+
+if (68 in keysDown && player.x <= 630 && playerLocation !='plateauArea' ) 
+/* d key */
+{
+document.getElementById('base1').className='hi';
+player.direction = 'right';
+document.getElementById('base1').style.transform = 'scaleX(1)';
+player.VelocityX = 10;
+}
+else if (68 in keysDown && player.x <= 630 && playerLocation === 'plateauArea')
+{
+document.getElementById('base1').className='hi';
+player.direction = 'right';
+document.getElementById('base1').style.transform = 'scaleX(1)';
+player.VelocityX = 10;
+}
+
+else if (65 in keysDown && player.x >= -60 && playerLocation != 'startingarea') 
+/* a key */
+{
+document.getElementById('base1').className='hi';
+player.direction = 'left';
+document.getElementById('base1').style.transform = 'scaleX(-1)';
+
+player.VelocityX = -10;
+}
+else if (65 in keysDown && player.x >= 0 && playerLocation === 'startingarea') 
+/* a key when in starting area */
+{
+document.getElementById('base1').className='hi';
+player.direction = 'left';
+document.getElementById('base1').style.transform = 'scaleX(-1)';
+player.VelocityX = -10;
+}
+else 
+{
+document.getElementById('base1').className='base';
+}
+ if (87 in keysDown && player.y >= 200 && jumpstatus === 'landed' ) /* w key */
+{
+player.VelocityY = 20;
+player.AccelerationY = 2;
+jumpstatus = 'in the air';
+}
+if (player.y >= 260)
+{
+jumpstatus = 'landed';
+}
+if (65 in keysDown && player.x <= 0 && playerLocation === 'startingarea')
+{
+player.VelocityX = 0;
+}
+
+/* player goes to another location */
+
+if (player.x >=620  && playerLocation === 'startingarea')
+{
+player.x = -45;
+playerLocation = 'alienbase';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/tYc3cu_iH5cZUldasSSX4Q2471')";
+}
+if (player.x <= -50 && playerLocation === 'alienbase')
+{
+player.x = 610;
+playerLocation = 'startingarea';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/rK5Pe3cQ8EgO2D3FTqtc3g15140')";
+}
+if (player.x >= 620 && playerLocation ==='alienbase')
+{
+player.x = -45;
+playerLocation = 'plateauArea';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/25MWKnCq85dMu4LEmHpgQA3605')";
+}
+
+
+
+if (player.x <= -50 && playerLocation === 'plateauArea')
+{
+player.x = 610;
+playerLocation = 'alienbase';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/tYc3cu_iH5cZUldasSSX4Q2471')";
+}
+if (player.x >= 620 && playerLocation ==='plateauArea')
+{
+player.x = -45;
+playerLocation = 'fortressgate';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/rsZbSspjJsYTuyEiIsh-kQ11685')";
+}
+if (player.x <= -50 && playerLocation === 'fortressgate')
+{
+player.x = 610;
+playerLocation = 'plateauArea';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/25MWKnCq85dMu4LEmHpgQA3605')";
+}
+if (player.x >= 620 && playerLocation ==='fortressgate')
+{
+player.x = -45;
+playerLocation = 'alienbase2';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/_1OcP4CvblFUnKqh7nbGHQ84375')";
+}
+if (player.x <= -50 && playerLocation === 'alienbase2')
+{
+player.x = 610;
+playerLocation = 'fortressgate';
+document.getElementById('background').style.backgroundImage="url('http://image.wikifoundry.com/image/3/rsZbSspjJsYTuyEiIsh-kQ11685')";
+}
+if (68 in keysDown && player.x >= 550 && playerLocation ==='alienbase2')
+{
+player.VelocityX= 0;
+}
+
+/* semi-colon key */
+if (77 in keysDown && alienlaser1status === 'notfired' && player.direction === 'right' ) 
+ {
+if (lasersfired == 0)
+{
+alienlaser1status = 'fired';
+alienlaser1.y = player.y + 55;
+alienlaser1.x = player.x + 30;
+alienlaser1.velocityX = 30;
+
+lasersfired = 1;
+}
+else if(lasersfired == 1)
+{
+alienlaser2status = 'fired';
+alienlaser2.y = player.y + 55;
+alienlaser2.x = player.x + 30;
+alienlaser2.velocityX = 30;
+lasersfired = 2;
+}
+else if(lasersfired == 2)
+{
+alienlaser3status = 'fired';
+alienlaser3.y = player.y + 55;
+alienlaser3.x = player.x + 30;
+alienlaser3.velocityX = 30;
+lasersfired = 3;
+}
+else
+{
+lasersfired = 0;
+}
+}
+if (77 in keysDown && alienlaser1status === 'notfired' && player.direction === 'left' )
+{
+if (lasersfired == 0)
+{
+alienlaser1status = 'fired';
+alienlaser1.y = player.y + 55;
+alienlaser1.x = player.x - 20;
+alienlaser1.velocityX = -30;
+lasersfired = 1;
+}
+else if(lasersfired == 1)
+{
+alienlaser2status = 'fired';
+alienlaser2.y = player.y + 55;
+alienlaser2.x = player.x - 20;
+alienlaser2.velocityX = -30;
+
+lasersfired = 2;
+}
+else if(lasersfired == 2)
+{
+alienlaser3status = 'fired';
+alienlaser3.y = player.y + 55;
+alienlaser3.x = player.x - 20;
+alienlaser3.velocityX = -30;
+lasersfired = 3;
+}
+else
+{
+lasersfired = 0;
+}
+}
+if ( touchtest(alienlaser1, robot1) === 'objectsaretouching' || touchtest(alienlaser2, robot1) === 'objectsaretouching' || touchtest(alienlaser3, robot1) === 'objectsaretouching' )
+{
+robotstatus2 = 'contact';
+}
+else
+{
+robotstatus2 = 'nocontact';
+}
+if ( robotstatus2 === 'contact' && playerLocation === 'fortressgate'  )
+{
+robot1Armor-=1;
+}
+if (robot1Armor <= 0)
+{
+robot1.status = 'inactive';
+document.getElementById('robot1').className="explosionsprite";
+}
+
+if (  touchtest(alienlaser1, robot1 ) === 'objectsaretouching' && playerLocation === 'fortressgate' && robot1.status !='inactive' )
+{
+status1 = 1;
+}
+else
+{
+status1 = 0;
+}
+if (alienlaser1.x >= 590 || alienlaser1.x <= -50 || status1 == 1  )
+{
+alienlaser1status = 'notfired';
+alienlaser1.x = 0;
+alienlaser1.y = 0;
+alienlaser1.velocityX = 0;
+}
+if (  touchtest(alienlaser2, robot1 ) === 'objectsaretouching' && playerLocation === 'fortressgate' && robot1.status != 'inactive')
+{
+status2 = 1;
+}
+else
+{
+status2 = 0;
+}
+if (alienlaser2.x >= 590 || alienlaser2.x <= -50 || status2==1)
+{
+alienlaser2status = 'notfired';
+alienlaser2.x = 0;
+alienlaser2.y = 0;
+alienlaser2.velocityX = 0;
+}
+if (touchtest(alienlaser3, robot1 ) === 'objectsaretouching' && playerLocation === 'fortressgate' && robot1.status != 'inactive' )
+{
+status3 = 1;
+}
+else
+{
+status3 = 0;
+}
+if (alienlaser3.x >= 590 || alienlaser3.x <= -50 ||  status3==1)
+{
+alienlaser3status = 'notfired';
+alienlaser3.x = 0;
+alienlaser3.y = 0;
+alienlaser3.velocityX = 0;
+}
+
+
+/* 3rd faction enemies */
+
+/* robot 1 status */
+if (robot1.x > 450 && robot1Armor > 0)
+{
+robot1.status = 'goingleft';
+}
+else if (robot1.x < 46 && robot1Armor > 0)
+{
+robot1.status = 'goingright';
+}
+else if (robot1Armor <= 0 && robot1.x > 450)
+{
+robot1.status = 'inactive';
+robot1Armor = 0;
+}
+else if (robot1Armor <= 0 && robot1.x < 46)
+{
+robot1.status = 'inactive';
+robot1Armor = 0;
+}
+else
+{
+robot1.status = 'goingleft';
+}
+if (playerLocation === 'fortressgate'  && robot1.status === 'goingleft')
+{
+document.getElementById('robot1').style.top= robot1.y + 'px';
+document.getElementById('robot1').style.left= robot1.x + 'px';
+document.getElementById('robot1').style.transform='scaleX(1)';
+robot1laser.VelocityX= -30;
+robot1.VelocityX= 0;
+document.getElementById('robot1').style.visibility='visible';
+document.getElementById('robotlaser').style.visibility='visible';
+ }
+else if (playerLocation === 'fortressgate' && robot1.status === 'goingright')
+{
+document.getElementById('robot1').style.visibility='visible';
+document.getElementById('robot1').style.top= robot1.y + 'px';
+document.getElementById('robot1').style.left= robot1.x + 'px';
+document.getElementById('robotlaser').style.visibility='visible';
+robot1.VelocityX = 0;
+robot1laser.VelocityX= 30;
+document.getElementById('robot1').style.transform='scaleX(-1)';
+}
+else
+{
+document.getElementById('robot1').style.top = robot1.y + 'px';
+document.getElementById('robot1').style.left = robot1.x + 'px';
+robot1.VelocityX = 0;
+/* document.getElementById('robot1').style.visibility ='hidden'; */
+document.getElementById('robotlaser').style.visibility ='hidden';
+}
+if (robot1laser.x <= -10)
+{
+robot1laser.x = robot1.x;
+}
+if (robot1laser.x >= 600)
+{
+robot1laser.x = robot1.x;
+}
+if ( playerLocation === 'fortressgate' && touchtest(player, robot1laser) === 'objectsaretouching' && robot1.status != 'inactive'  )
+{
+playerArmor-=1;
+robot1laser.x = robot1.x;
+}
+ 
+}
+
+</script>
+
+
+  
+</html>                   
