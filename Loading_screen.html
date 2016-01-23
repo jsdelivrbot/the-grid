@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html>
+<head ><link rel="shortcut icon" href="http://wikifoundryattachments.com/tjmt6ZwS9YzwR___tQieRw152154">
+<title>Role-playing Game</title>
+<style> 
+.loadingbar {
+    position: absolute;
+    top: 100px;
+    left: 165px;
+    width: 260px;
+    height: 180px;
+    background: orange;
+    z-index: -2;
+    animation-timing-function: linear;
+    animation-name: transition;
+    animation-duration:2s;
+
+}
+.loadingbackground2
+{
+position: absolute;
+top: 100px;
+left: 165px;
+width: 260px;
+height: 180px;
+z-index: -2;
+background: #ccff33;
+}
+
+@keyframes transition
+{
+    from{width: 0px};
+    to{width: 50px};
+}
+.overlay {
+    position: absolute;
+    top:100px;
+    left:150px;
+    z-index:10;
+
+}
+
+
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+@keyframes spin2 {
+    from {transform:rotate(90deg);}
+    to {transform:rotate(-270deg);}
+}
+
+.background1
+{
+position: absolute;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 100%;
+background: black;
+z-index: -3;
+}
+.arrows1
+{
+position: absolute;
+top: 90px;
+left: 110px;
+animation: spin 3s infinite;
+animation-timing-function: linear;
+
+z-index: 10;
+}
+.arrows2
+{
+position: absolute;
+top: 90px;
+left: 110px;
+animation: spin2 3s infinite;
+animation-timing-function: linear;
+
+z-index: 10;
+}
+</style>
+</head>
+<body>
+<div class="loadingbackground2"></div>
+<div class="background1"></div>
+<img class="overlay" width=280px height=180px src="http://image.wikifoundry.com/image/3/85bb15d311b634a91a2bc4b457ac663f">
+
+<div class="loadingbar"></div>
+<img class="arrows1" width=350px height=200px src="http://image.wikifoundry.com/image/3/e4a221b089c6c14cf78a4a51bbcb9cf6">
+<img class="arrows2" width=350px height=200px src="http://image.wikifoundry.com/image/3/30e508b5b019a49435a3d3ab62919018">
+
+</body>
+</html>
