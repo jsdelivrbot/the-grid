@@ -5,7 +5,7 @@
 <head ><link rel="shortcut icon" href="http://wikifoundryattachments.com/tjmt6ZwS9YzwR___tQieRw152154">
 <title>Role-playing Game</title>
 <style> 
-.background1{
+.backgrounda{
     position:absolute;
     top: 0px;
     left: 0px;
@@ -67,16 +67,24 @@
     position:absolute;
     top: 90px;
     left: 110px;
-    animation: spin2 3s infinite;
+    animation: spina 3s infinite;
     animation-timing-function: linear;
-    -webkit-animation: spin2 3s infinite;
+    -webkit-animation: spina 3s infinite;
     -webkit-animation-timing-function: linear;
-    animation: spin2 3s infinite;
+    animation: spina 3s infinite;
     animation-timing-function: linear;
     z-index: 10;
     width: 350px;
     height: 200px;
 }
+
+
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+@-webkit-keyframes spina { 100% { -webkit-transform: rotate(270deg); } }
+@keyframes spina { 100% { -webkit-transform: rotate(-270deg); transform:rotate(270deg); } }
 
 
 @-webkit-keyframes transition{
@@ -92,29 +100,13 @@
 
 
 
-@-webkit-keyframes spin{
-    100%{-webkit-transform:rotate(360deg);}
-    {transform:rotate(360deg);}
-}
-@keyframes spin{
-    100%{-webkit-transform:rotate(360deg);}
-    {transform:rotate(360deg);}
-}
 
-@keyframes spin2{
-    100%{-webkit-transform:rotate(-270deg);}
-    {transform:rotate(-270deg);}
-}
 
-@-webkit-keyframes spin2{
-    from {-webkit-transform:rotate(90deg);}
-    to {-webkit-transform:rotate(-270deg);}
-}
 
 </style>
 </head>
-<body>
-<div class="background1" width="1000px" height="1000px"></div>
+<body style="background-color:black;">
+<div class="backgrounda" width="1000px" height="1000px" style="color: black;"></div>
 <div class="loadingbackground2"></div>
 
 <img class="overlay1" width=280px height=180px src="http://image.wikifoundry.com/image/3/85bb15d311b634a91a2bc4b457ac663f">
