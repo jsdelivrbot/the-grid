@@ -5,8 +5,17 @@
 <head ><link rel="shortcut icon" href="http://wikifoundryattachments.com/tjmt6ZwS9YzwR___tQieRw152154">
 <title>Role-playing Game</title>
 <style> 
-.loadingbar {
-    position: absolute;
+.background1{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    width: 1000px;
+    height: 1000px;
+    color: blue;
+    z-index: 53;
+}
+.loadingbar{
+    position:absolute;
     top: 100px;
     left: 165px;
     width: 260px;
@@ -22,7 +31,7 @@
 
 }
 .loadingbackground2{
-    position: absolute;
+    position:absolute;
     top: 100px;
     left: 165px;
     width: 260px;
@@ -30,6 +39,45 @@
     z-index: -2;
     background: #ccff33;
 }
+.overlay1{
+    position:absolute;
+    top:100px;
+    left:150px;
+    width: 260px;
+    height: 180px;
+    z-index:10;
+
+}
+
+
+
+.arrows11{
+    position:absolute;
+    top: 90px;
+    left: 110px;
+    -webkit-animation: spin 3s infinite;
+    -webkit-animation-timing-function: linear;
+    animation: spin 3s infinite;
+    animation-timing-function: linear;
+    z-index: 10;
+    width: 350px;
+    height: 200px;
+}
+.arrows21{
+    position:absolute;
+    top: 90px;
+    left: 110px;
+    animation: spin2 3s infinite;
+    animation-timing-function: linear;
+    -webkit-animation: spin2 3s infinite;
+    -webkit-animation-timing-function: linear;
+    animation: spin2 3s infinite;
+    animation-timing-function: linear;
+    z-index: 10;
+    width: 350px;
+    height: 200px;
+}
+
 
 @-webkit-keyframes transition{
     from{width: 0px};
@@ -40,13 +88,7 @@
     to{width: 50px};
 }
 
-.overlay1{
-    position: absolute;
-    top:100px;
-    left:150px;
-    z-index:10;
 
-}
 
 
 
@@ -69,47 +111,17 @@
     to {-webkit-transform:rotate(-270deg);}
 }
 
-.background1{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 1000px;
-    height: 1000px;
-    background: black;
-    z-index: -3;
-}
-.arrows1{
-    position: absolute;
-    top: 90px;
-    left: 110px;
-    -webkit-animation: spin 3s infinite;
-    -webkit-animation-timing-function: linear;
-    animation: spin 3s infinite;
-    animation-timing-function: linear;
-    z-index: 10;
-}
-.arrows2{
-    position: absolute;
-    top: 90px;
-    left: 110px;
-    animation: spin2 3s infinite;
-    animation-timing-function: linear;
-    -webkit-animation: spin2 3s infinite;
-    -webkit-animation-timing-function: linear;
-    animation: spin2 3s infinite;
-    animation-timing-function: linear;
-    z-index: 10;
-}
 </style>
 </head>
 <body>
+<div class="background1" width="1000px" height="1000px"></div>
 <div class="loadingbackground2"></div>
-<div class="background1"></div>
+
 <img class="overlay1" width=280px height=180px src="http://image.wikifoundry.com/image/3/85bb15d311b634a91a2bc4b457ac663f">
 
 <div class="loadingbar"></div>
-<img class="arrows1" width=350px height=200px src="http://image.wikifoundry.com/image/3/e4a221b089c6c14cf78a4a51bbcb9cf6">
-<img class="arrows2" width=350px height=200px src="http://image.wikifoundry.com/image/3/30e508b5b019a49435a3d3ab62919018">
+<img class="arrows11" width=350px height=200px src="http://image.wikifoundry.com/image/3/e4a221b089c6c14cf78a4a51bbcb9cf6">
+<img class="arrows21" width=350px height=200px src="http://image.wikifoundry.com/image/3/30e508b5b019a49435a3d3ab62919018">
 
 </body>
 </html>
