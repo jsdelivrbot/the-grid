@@ -13,9 +13,9 @@
     height: 180px;
     background: orange;
     z-index: -2;
-    animation-timing-function: linear;
-    animation-name: transition;
-    animation-duration:2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: transition;
+    -webkit-animation-duration:2s;
 
 }
 .loadingbackground2
@@ -29,7 +29,7 @@ z-index: -2;
 background: #ccff33;
 }
 
-@keyframes transition
+@-webkit-keyframes transition
 {
     from{width: 0px};
     to{width: 50px};
@@ -44,7 +44,7 @@ background: #ccff33;
 
 
 
-@keyframes spin {
+@-webkit-keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
 }
@@ -73,8 +73,8 @@ z-index: -3;
 position: absolute;
 top: 90px;
 left: 110px;
-animation: spin 3s infinite;
-animation-timing-function: linear;
+-webkit-animation: spin 3s infinite;
+-webkit-animation-timing-function: linear;
 
 z-index: 10;
 }
