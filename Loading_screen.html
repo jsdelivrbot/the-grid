@@ -53,6 +53,11 @@ background: #ccff33;
     to {transform:rotate(-270deg);}
 }
 
+@-webkit-keyframes spin2 {
+    from {transform:rotate(90deg);}
+    to {transform:rotate(-270deg);}
+}
+
 .background1
 {
 position: absolute;
@@ -80,6 +85,8 @@ top: 90px;
 left: 110px;
 animation: spin2 3s infinite;
 animation-timing-function: linear;
+-webkit-animation: spin2 3s infinite;
+-webkit-animation-timing-function: linear;
 
 z-index: 10;
 }
