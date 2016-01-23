@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.background
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 510px;
+    height: 500px;
+    background-color: black;
+    z-index: 11;
+}
+@font-face
+{
+    font-family: alienfont;
+    src: url("http://wikifoundryattachments.com/fPDnsmgGAAzMQD2TX4y2cA60844");
+}
+
+.alientext
+{
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    font-family: alienfont;
+    font-size: 125%;
+    color: Lime;
+    width: 21.0em;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing2 2s steps(31, end) forwards;
+    -webkit-animation-delay: 3s;
+}
+.alientext2
+{
+    position: absolute;
+    top: 60px;
+    right: 70px;
+    font-family: alienfont;
+    font-size: 125%;
+    color: Lime;
+    width: 21.0em;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing4 2s steps(31, end) forwards;
+    -webkit-animation-delay: 8s;
+}
+
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width:20.0em }
+}
+@-webkit-keyframes typing2 
+{
+    from { width: 21.0em }
+    to { width: 0 }
+}
+@-webkit-keyframes typing3
+{
+    from { width: 0em }
+    to { width: 20.0em }
+}
+@-webkit-keyframes typing4
+{
+    from { width: 21.0em }
+    to { width: 0em }
+}
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width:16.3em }
+}
+
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: Lime }
+}
+
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: Lime }
+}
+
+body { font-family: Courier; }
+
+.decodingtext
+{
+     position: absolute;
+    top: 60px;
+    left: 30px;
+    font-size:125%;
+    width:0em;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right: .1em solid black;
+    background-color: black;
+    
+    -webkit-animation: typing3 2s steps(29, end) forwards, /* # of steps = # of characters */
+         blink-caret 1s step-end infinite;
+    -webkit-animation-delay: 8s;
+}
+h1 { 
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size:125%;
+    width:0em;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right: .1em solid black;
+    background-color: black;
+    
+    -webkit-animation: typing 2s steps(31, end) forwards, /* # of steps = # of characters */
+ blink-caret 1s step-end 5;
+    
+    -webkit-animation-delay: 3s;
+}
+.startlevel1
+{
+position: absolute;
+top: 200px;
+left: 100px;
+width: 210px;
+height: 50px;
+opacity: 0;
+background-image: url("http://wikifoundryattachments.com/kORMT6039-XasZqOxncLvQ3983");
+-webkit-transition: background-image 0.5s; 
+-webkit-animation:buttonappear 2s forwards;
+-webkit-animation-delay: 12s; 
+}
+.startlevel1:hover
+{
+background-image: url("http://wikifoundryattachments.com/dzXrTrz7hAuLCzPZkNNdzg4000");
+}
+@-webkit-keyframes buttonappear  
+{
+0% { opacity: 0; }
+100% { opacity: 1;}
+}
+.startlevelbutton
+{
+position: absolute;
+top: 0px;
+left: 0px; 
+font-family: Arial;
+color: Lime; 
+width: 210px;
+height: 50px;
+font-size: 150%;  
+-webkit-transition: color 0.5s;
+}
+.startlevelbutton:hover
+{
+color: blue;
+}
+.startleveltext
+{
+position: absolute;
+top: 12px;
+left: 70px;
+}
+.textdisplay
+{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    text-align: left; 
+    word-break: break-all;
+}
+.background1
+{
+    position: absolute;
+    top:0px;
+    left: 10px;
+    width: 500px;
+    height: 500px;
+    background-image: url("http://image.wikifoundry.com/image/1/lG_4FvoVVWVGPQwYooOYsw105996");
+    z-index: 1;
+}
+.walkingastro
+{
+    position: relative;
+    top: 100px;
+    left: 50px;
+    
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+    /-webkit-animation: astrowalking 3s infinite; 
+    -webkit-animation: astrowalking 10s infinite;
+     -webkit-animation-timing-function:linear;
+}
+@-webkit-keyframes astrowalking
+{
+    from { left: 50px;}
+    to {left: 200px; }
+}
+.alienshadow
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/QPg5bqz2e1gg0UvLOuVQrA51793");
+        background-position: -400px 0px;
+    opacity: 0.6;
+}
+.astroshadow
+{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/Jd7HiLpDyfbIs8LK_2nbOA52637");
+        background-position: -400px 0px;
+    opacity: 0.6;
+}
+.hi {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/Jd7HiLpDyfbIs8LK_2nbOA52637");
+    -webkit-animation-timing-function:linear;
+    -webkit-animation: walkingeast 0.4s steps(1) infinite alternate;
+      
+}
+.alienwalkingeast {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/QPg5bqz2e1gg0UvLOuVQrA51793");
+    -webkit-animation-timing-function:linear;
+    -webkit-animation: walkingeast 0.4s steps(1) infinite alternate;
+      
+}
+.alienwalkingwest {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/QPg5bqz2e1gg0UvLOuVQrA51793");
+    -webkit-animation-timing-function:linear;
+    -webkit-animation: walkingwest 0.4s steps(1) infinite alternate;
+      
+}
+.alienwalkingnorth {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/QPg5bqz2e1gg0UvLOuVQrA51793");
+    -webkit-animation-timing-function:linear;
+    -webkit-animation: walkingnorth 0.4s steps(1) infinite alternate;
+      
+}
+.alienwalkingsouth {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/QPg5bqz2e1gg0UvLOuVQrA51793");
+    -webkit-animation-timing-function:linear;
+    -webkit-animation: walkingsouth 0.4s steps(1) infinite alternate;
+      
+}
+/* walking east */
+@-webkit-keyframes walkingeast {
+   0% { background-position:    -400px -200px; }
+    33% { background-position: -400px -100px; }
+  66% { background-position: -400px -300px; }
+    100% { background-position: -400px -200px; }
+}
+/* walking west */
+@-webkit-keyframes walkingwest {
+   0% { background-position:    -1200px -200px; }
+    33% { background-position: -1200px -100px; }
+  66% { background-position: -1200px -300px; }
+    100% { background-position: -1200px -200px; }
+}
+/* walking north */
+@-webkit-keyframes walkingnorth {
+   0% { background-position:    0px -200px; }
+    33% { background-position: 0px -100px; }
+  66% { background-position: 0px -300px; }
+    100% { background-position: 0px -200px; }
+}
+/* walking south */
+@-webkit-keyframes walkingsouth {
+   0% { background-position:    -800px -200px; }
+    33% { background-position: -800px -100px; }
+  66% { background-position: -800px -300px; }
+    100% { background-position: -800px -200px; }
+}
+#spriteimagealien
+{
+    position: absolute;
+    top: 50px;
+    left: 25px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/QPg5bqz2e1gg0UvLOuVQrA51793");
+    z-index: 9;
+}
+#spriteimageastro
+{
+    position: relative;
+    top: 100px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    background-image: url("http://image.wikifoundry.com/image/3/Jd7HiLpDyfbIs8LK_2nbOA52637");
+    z-index: 3
+}
+.spritenorth
+{
+    background-position: 0px -100px;
+}
+.spritewest
+{
+    background-position: -1200px -100px;
+}
+.spritesouth
+{
+    background-position: -800px -100px;
+}
+.spriteeast
+{
+    background-position: -400px -100px;
+}
+#astrovehicleactive
+{
+position: absolute;
+top: 50px; 
+left: 50px;
+-webkit-animation: astrovehicleactive 2s infinite;
+-webkit-animation-timing-function: linear;
+z-index: 10;
+}
+@-webkit-keyframes astrovehicleactive
+{
+0% { top: 50px; left: 50px; }
+10% { top: 49px; }
+25% { left: 52px; }
+ 30% { top: 45px;  } 
+50% { top: 41px;  }
+ 70% { top: 45px;  }
+75% { left: 48px; } 
+90% { top: 49px; }
+100% { top: 50px; left: 50px; }
+}
+#astrovehicle
+{ 
+position: absolute;
+top: 300px;
+left: 50px;
+width: 100px;
+height: 100px;
+background-image: url("http://image.wikifoundry.com/image/3/wqryEnIIoysiEdXe5SlTcQ4907");
+}
+.astrovehicleNorth
+{         
+background-position: -100px -100px;  
+ }
+.astrovehicleWest
+{     
+background-position: -100px 0px;
+}
+.astrovehicleEast
+{
+background-position: -200px 0px;
+}
+.astrovehicleSouth
+{
+background-position: 0px 0px;
+}
+
+.astroship
+{
+position: absolute;
+top: 250px;
+left: 160px;
+width: 280px;
+height: 280px;
+background-image: url("http://image.wikifoundry.com/image/3/eZpPuhe7RFRDOPfxompMWg9699");
+opacity: 1;
+z-index: 6;
+}
+.astroshipshadow
+{
+position: absolute;
+top: 250px;
+left: 160px;
+width: 280px;
+height: 280px;
+background-image: url("http://image.wikifoundry.com/image/3/eZpPuhe7RFRDOPfxompMWg9699");
+background-position: 0px -280px;
+opacity: 0.6;
+z-index: 5;
+}
+.alienpod
+{ 
+position: absolute;
+top: 60px;
+left: 320px;
+width: 100px;
+height: 100px;
+background-image: url("http://image.wikifoundry.com/image/3/oYQirT7oOGSjR83tbIMmfA1190");
+background-position: 0px 0px;
+z-index: 3;
+}
+.alienpodshadow
+{ 
+position: absolute;
+top: 60px;
+left: 320px;
+width: 100px;
+height: 100px;
+background-image: url("http://image.wikifoundry.com/image/3/oYQirT7oOGSjR83tbIMmfA1190");
+background-position: 0px -100px;
+z-index: 2;
+}
+.youwin
+{
+position: absolute;
+top: 100px;
+left: 100px;
+font-family: Arial;
+color: Lime;
+font-size: 125%;
+z-index: -1;
+}
+
+
+</style>
+</head>
+<body> 
+
+<div class="game" >
+<div class="background1" ></div>
+<div class="walkingastro" >
+    <div class="alienshadow"></div>
+    <div class="alienwalkingeast"></div>
+    <div class="astroshadow" ></div>
+    <div class="hi" ></div>
+</div>
+<div class="spriteeast" id="spriteimagealien" ></div>
+<div class="spritenorth" id="spriteimageastro" >
+</div>
+<div class="textdisplay" id="playerdisplay1" ></div>
+<div class="astrovehicleactive" id="astrovehicleactive" >
+<div class="astrovehicleWest" id="astrovehicle" ></div>
+</div>
+<div class="astroshipshadow" ></div>
+<div class="astroship" ></div>
+<div class="alienpod" ></div>
+<div class="alienpodshadow" ></div>
+<div class="youwin" id="winmessage" >You win for discovering the Crystal Reaper!</div>
+
+
+
+</div>
+<div class="background" id="startgame" >
+    <h1>
+        <font color="Lime">Intercepted alien transmission
+        </font>
+        </h1>
+    <div class="alientext" >Intercepted alien transmission</div>
+        <div class="decodingtext" ><font color="Lime" >We have spotted an astro ship.</font></div>
+    <div class="alientext2" >We have spotted an astro ship.</div>
+<div class="startlevel1" onclick="beginlevel1()" ><div class="startlevelbutton" ><div class="startleveltext" >Start</div>
+</div></div>
+</div>
+
+<script type="text/javascript" >
+
+function beginlevel1()
+{
+document.getElementById('startgame').style.visibility='hidden';
+}
+ 
+ 
+var x=setInterval(update, 50);   
+
+var alienX = 50;
+var alienY = 50;
+var alienlocation = document.getElementById('spriteimagealien');
+var idleposition = 'spriteeast';
+var astrovehicleX = 50;
+var astrovehicleY = 300;
+var astrovehicleLocation = document.getElementById('astrovehicle');
+var astrovehicleactive = document.getElementById('astrovehicleactive');
+
+//var y=setInterval(spacebarpress, 33);
+//function runfunction()
+//{
+// document.getElementById('playerdisplay1').innerHTML+='hi';/
+//}
+
+// Handle keyboard controls
+
+function hi()
+{
+document.getElementById('spriteimagealien').className='alienwalkingnorth';
+}
+var keysDown = {};
+
+addEventListener("keydown", function (e) {
+	keysDown[e.keyCode] = true;
+}, false);
+
+addEventListener("keyup", function (e) {
+	delete keysDown[e.keyCode];
+}, false);
+var update = function(modifier)
+{
+    
+alienlocation.style.top = alienY + 'px';
+alienlocation.style.left = alienX + 'px';   
+    
+astrovehicleLocation.style.top = astrovehicleY + 'px';
+astrovehicleLocation.style.left = astrovehicleX + 'px';
+
+if (astrovehicleY <= 250)
+{
+astrovehicleactive.style.zIndex = 4;
+}
+else
+{
+astrovehicleactive.style.zIndex= 10;
+}
+if (astrovehicleY <=75 && astrovehicleX >=250)
+{
+document.getElementById('winmessage').style.zIndex= 10;
+}
+if(68 in keysDown) //d key 
+{
+document.getElementById('spriteimagealien').className='alienwalkingeast';
+alienX+= 1;   
+idleposition='spriteeast';
+} 
+else if(87 in keysDown) //w key  
+    {
+        hi();
+alienY-= 1; 
+idleposition='spritenorth';
+    }
+
+    else if(65 in keysDown) //a key
+    {
+    document.getElementById('spriteimagealien').className='alienwalkingwest'; 
+alienX-= 1; 
+idleposition='spritewest';
+    }
+else if(83 in keysDown) //s key
+{
+document.getElementById('spriteimagealien').className='alienwalkingsouth'; 
+alienY+= 1;
+idleposition='spritesouth';
+} 
+else
+{
+alienlocation.className=idleposition;
+}
+
+//astro vehicle movement
+if (37 in keysDown) //left arrow key
+{
+astrovehicleLocation.className='astrovehicleWest';
+astrovehicleX-= 5;
+}
+else if (38 in keysDown) //up arrow key
+{
+astrovehicleLocation.className='astrovehicleNorth';
+astrovehicleY-= 5;
+}
+else if (39 in keysDown) //right arrow key
+{
+astrovehicleLocation.className='astrovehicleEast';
+astrovehicleX+= 5;
+}
+else if (40 in keysDown) //down arrow key
+{
+astrovehicleLocation.className='astrovehicleSouth';
+astrovehicleY+= 5;
+}
+else 
+{
+astrovehicleX+=0;
+}
+}
+
+
+</script>
+
+</body>
+</html>
