@@ -1,4 +1,4 @@
-<!doctype html>
+L<!doctype html>
 <html lang=en>
 <head>
 <meta charset=utf-8>
@@ -100,7 +100,7 @@ if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
          
-         echo "<BR>". $row['x_location']. "<BR>";
+         echo "<br>";
          
          
      }
