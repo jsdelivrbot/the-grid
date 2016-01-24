@@ -62,7 +62,7 @@ dS = C heat capacity dT/ T
 
 deltaS = integral t1-t2 dS 
 
-deltaS = C heat capacity ln(t1-t2)
+deltaS = C heat capacity ln(T2/T1) DIVISION
 
 Greater the ratio of temp, the greater the entropy. Graphical: delta_S/C increases at an almost infinitesimal rate initially, then rate of change flattens out, vs. T1/T2
 
@@ -73,8 +73,23 @@ Thermal disorder
 20.0L nitrogen gas, 5.00kPa, from 20 degrees to 400. degrees Celsius, constant volume.
 Delta_S of nitrogen?
 
-Molar heat capacity of Notrogen and constant volume: Cvm: 20 .81 J/K*mol
+Molar heat capacity of Nitrogen and constant volume: Cvm: 20 .81 J/K*mol
 
+Delta_S = C heat capacity ln(T2/T1) 
+
+
+Temperature to kelvin:
+T2 400+273.15 K 673 K
+T1 20+ 273.15 K 293 K
+
+673 K/273 K
+
+Find mols of Nitrogen.  PV = nRT # USE PV = NRT TO FIND MOLS
+n= PV/RT
+T = T1
+n = 5.00kPa*20.0L/(8.314 L kPa/mol K * 293 K)
+
+Delta_S= n*Cvm * ln(T2/T1)
 
 
 
