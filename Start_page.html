@@ -17,7 +17,7 @@ $dbname = "cryszwjw_g_stats";
 
 //set up variables
 $inputplayerid = $name ="";
-$inputplayerstats= 1:
+$inputplayerstats= 1;
 $inputplayeridErr = $nameErr ="";
 
 
@@ -72,8 +72,8 @@ $conn->close();
 ?>
 
 <form method="post">
-Player Name: <input type="text" name="name" value="<?php echo $name;?>">
-<span class="error">*<?php echo $nameErr;?>
+Player Name: <input type="text" name="name" value="<?php echo $name; ?>" >
+<span class="error">*<?php echo $nameErr; ?>
 </span>
 <input type="submit" name="submit" value="Submit">
 </form>
