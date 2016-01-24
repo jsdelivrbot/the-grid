@@ -100,7 +100,7 @@ if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
          
-         echo ". $row['x_location']. ";
+         echo "<BR>". $row['x_location']. "<BR>";
          
          
      }
