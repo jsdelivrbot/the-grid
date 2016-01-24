@@ -86,12 +86,12 @@ if ($conn->connect_error) {
 
 
 
-$sql= "SELECT x_location FROM player_location_data";
+$sql= "SELECT PlayerID,x_location,y_location FROM player_location_data";
 
 
 $result = $conn->query($sql);
-$row1 = mysqli_fetch_assoc($result);
-$x_in_php = 'words';
+
+$x_in_php = 1;
 
 
 
