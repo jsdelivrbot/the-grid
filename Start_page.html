@@ -16,9 +16,9 @@ $password = "vWNxak!auom3";
 $dbname = "cryszwjw_g_stats";
 
 //set up variables
-$inputplayerid = $name ="";
+$inputplayerid = $name = "";
 $inputplayerstats= 1;
-$inputplayeridErr = $nameErr ="";
+$inputplayeridErr = $nameErr = "";
 
 
 // Create connection
@@ -45,17 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-
-}
-function test_input($data){
-   $data = trim($data);
-   $data = stripslashes($data);
-   $data = htmlspecialchars($data);
-return $data;
-}
-
-function createPlayer(){
-
 $sql = "INSERT INTO gamesync_data (PlayerID, PlayerName, PlayerStats)
 VALUES ('ID12350', $_POST["name"], $inputplayerstats)";
 
@@ -68,6 +57,19 @@ if ($conn->query($sql) === TRUE) {
 
 }
 
+function test_input($data){
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+return $data;
+}
+
+
+
+
+
+
+
 $conn->close();
 ?>
 
@@ -75,7 +77,7 @@ $conn->close();
 Player Name: <input type="text" name="name" value="<?php echo $name; ?>" >
 <span class="error">*<?php echo $nameErr; ?>
 </span>
-<input type="submit" name="submit" value="Submit">
+<input type="submit" name="submit" value="Submit" >
 </form>
 
 </body>
