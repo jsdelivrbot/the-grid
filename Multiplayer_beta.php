@@ -86,13 +86,13 @@ if ($conn->connect_error) {
 
 $sql = "SELECT PlayerId, x_location, y_location FROM player_location_data";
 
-
+$sql2= "x_location FROM player_location_data";
 
 
 $result = $conn->query($sql);
 
 
-$x_in_php=10;
+$x_in_php= $conn->query($sql)2;
 
 
 
@@ -114,7 +114,9 @@ $conn->close();
 
 
 <script>
-var opponentX = "<?php echo $x_in_php; ?>";
+var opponentX1 = "<?php echo $x_in_php; ?>";
+
+var opponentX=0;
 
 var initialX=0;
 var initialY=0;
@@ -196,7 +198,7 @@ c.drawImage(samusimage,playerX, playerY, 30,60);
 c.drawImage(darkside,opponentX,100,60,60);
 
 c.fillStyle="white";
-c.fillText(opponentX,200,250);
+c.fillText(opponent1,200,250);
 
 if(touches[0])
 {
