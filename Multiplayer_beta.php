@@ -101,7 +101,7 @@ if ($result->num_rows > 0) {
      while($row = $result->fetch_assoc()) {
          
          echo "<br> id: ". $row["PlayerId"]. " ". $row["x_location"]. " " . $row["y_location"] . "<br>";
-         $x_in_php= (int)".$row["x_location"].";
+         $x_in_php= echo ".$row["x_location"].";
      }
 } else {
      echo "0 results";
