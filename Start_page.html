@@ -30,7 +30,7 @@ if ($conn->connect_error) {
 
 
 $sql = "INSERT INTO gamesync_data (PlayerID, PlayerName, PlayerStats)
-VALUES ('ID12350', 'new player', $inputplayerstats)";
+VALUES ('ID12350', 'new player', 1)";
 
 
 if ($conn->query($sql) === TRUE) {
