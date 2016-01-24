@@ -12,8 +12,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO  (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+$sql = "INSERT INTO gamesync_data (PlayerID, PlayerName, PlayerStats)
+VALUES ('ID12350', 'New Player', '30')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
