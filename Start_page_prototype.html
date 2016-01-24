@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.error{
+color:blue;
+}
+</style>
+</head>
+<body>
+
+<?php
+$servername = "localhost";
+$username = "cryszwjw_g_user";
+$password = "vWNxak!auom3";
+$dbname = "cryszwjw_g_stats";
+
+//set up variables
+$inputplayerid = $name = "";
+$inputplayerstats= 1;
+$inputplayeridErr = $nameErr = "";
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+
+//form validation
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+   if (empty($_POST["name"])) {
+     $nameErr = "Name is required";
+   } else {
+     $name = test_input($_POST["name"]);
+
+     // check if name only contains letters and whitespace
+
+     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+       $nameErr = "Only letters and white space allowed"; 
+}
+
+}
+
+$sql = "INSERT INTO gamesync_data (PlayerID, PlayerName, PlayerStats)
+VALUES ('ID12350', $_POST["name"], $inputplayerstats)";
+
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+}
+
+function test_input($data){
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+return $data;
+}
+
+
+
+
+
+
+
+$conn->close();
+?>
+
+<form method="post">
+Player Name: <input type="text" name="name" value="<?php echo $name; ?>" >
+<span class="error">*<?php echo $nameErr; ?>
+</span>
+<input type="submit" name="submit" value="Submit" >
+</form>
+
+</body>
+
+
+</html>
