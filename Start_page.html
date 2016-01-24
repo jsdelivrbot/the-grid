@@ -16,9 +16,9 @@ $password = "vWNxak!auom3";
 $dbname = "cryszwjw_g_stats";
 
 //set up variables
-$inputplayerid = $name = "";
+$inputplayerid = '';
+$name = '';
 $inputplayerstats= 1;
-$inputplayeridErr = $nameErr = "";
 
 
 // Create connection
@@ -27,7 +27,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-
 
 
 $sql = "INSERT INTO gamesync_data (PlayerID, PlayerName, PlayerStats)
@@ -41,20 +40,12 @@ if ($conn->query($sql) === TRUE) {
 }
 
 
-
-
-
-
-
-
-
-
 $conn->close();
 ?>
 
-<form method="post">
-Player Name: <input type="text" name="name" value="<?php echo $name; ?>" >
-<span class="error">*<?php echo $nameErr; ?>
+<form >
+Player Name: <input type="text" name="name" >
+<span class="error">*
 </span>
 <input type="submit" name="submit" value="Submit" >
 </form>
