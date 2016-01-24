@@ -86,9 +86,15 @@ if ($conn->connect_error) {
 
 $sql = "SELECT PlayerId, x_location, y_location FROM player_location_data";
 
-$x_in_php= "SELECT x_location FROM player_location_data WHERE PlayerId='Player 1'";
+
+
 
 $result = $conn->query($sql);
+
+$row = $result->fetch_assoc();
+
+$x_in_php= $row["x_location"];
+
 
 if ($result->num_rows > 0) {
      // output data of each row
@@ -334,4 +340,3 @@ c.lineWidth =2;
 
 </body>
 </html>
-
