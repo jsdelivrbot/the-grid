@@ -90,7 +90,8 @@ $sql= "SELECT x_location FROM player_location_data";
 
 
 $result = $conn->query($sql);
-
+$row = $result->fetch_assoc();
+$x_in_php = $row["x_location"];
 
 
 
@@ -114,7 +115,7 @@ $conn->close();
 
 
 <script>
-var opponentX1 = "<?php echo $result; ?>";
+var opponentX1 = "<?php echo $x_in_php; ?>";
 
 var opponentX=0;
 
