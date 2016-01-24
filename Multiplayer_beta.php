@@ -92,7 +92,7 @@ $sql2= "x_location FROM player_location_data";
 $result = $conn->query($sql);
 
 
-$x_in_php= $conn->query($sql)2;
+$x_in_php= $conn->query($sql2);
 
 
 
