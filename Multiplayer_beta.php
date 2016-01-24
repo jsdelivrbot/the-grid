@@ -90,7 +90,7 @@ $sql= "SELECT x_location FROM player_location_data";
 
 
 $result = $conn->query($sql);
-$row = $result->fetch_assoc();
+$row = mysqli_fetch_assoc($result);
 $x_in_php = $row["x_location"];
 
 
