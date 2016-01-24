@@ -93,7 +93,7 @@ $result = $conn->query($sql);
 
 $row = $result->fetch_assoc();
 
-$x_in_php= $row["x_location"];
+$x_in_php= ".$row["x_location"].";
 
 
 if ($result->num_rows > 0) {
