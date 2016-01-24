@@ -1,3 +1,13 @@
 Remember: the more negative Gibbs is, the more spontaneous.
 
+G = h-TS
+
 If the reaction is exothermic, deltaH is negative. 
+If the change in entropy is positive, entropy increases, then it depends. Lower temp. Spontaneous.
+
+If exothermic and entropy up, spontaneous.
+
+If endothermic and s positive, need to decrease s term by raise temp.
+
+
+If endothermic and s negative, not Spontaneous. Proceeds only if you put in energy. Needs energy to start.
