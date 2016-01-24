@@ -94,5 +94,9 @@ Delta_S= n*Cvm * ln(T2/T1)
 
 
 
+::Some changes are accompanied by a change in volume
+
+
+
 
 
