@@ -101,7 +101,7 @@ if ($result->num_rows > 0) {
      while($row = $result->fetch_assoc()) {
          
          echo ". $row["x_location"]. ";
-         $x_in_php = ". $row["x_location"]. ";
+         //$x_in_php = ". $row["x_location"]. ";
          
      }
 } else {
