@@ -86,7 +86,7 @@ if ($conn->connect_error) {
 
 
 
-$sql= "SELECT PlayerID,x_location,y_location FROM player_location_data";
+$sql= "SELECT PlayerId,x_location,y_location FROM player_location_data";
 
 
 $result = $conn->query($sql);
