@@ -84,15 +84,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT PlayerId, x_location, y_location FROM player_location_data";
 
-$sql2= "SELECT x_location FROM player_location_data";
+
+$sql= "SELECT x_location FROM player_location_data";
 
 
 $result = $conn->query($sql);
 
 
-$x_in_php= $conn->query($sql2);
+
 
 
 
@@ -114,7 +114,7 @@ $conn->close();
 
 
 <script>
-var opponentX1 = "<?php echo $x_in_php; ?>";
+var opponentX1 = "<?php echo $result; ?>";
 
 var opponentX=0;
 
