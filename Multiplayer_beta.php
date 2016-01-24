@@ -91,15 +91,16 @@ $sql = "SELECT PlayerId, x_location, y_location FROM player_location_data";
 
 $result = $conn->query($sql);
 
-$row = $result->fetch_assoc();
 
-$x_in_php= ".$row["x_location"].";
+
+
 
 
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
          echo "<br> id: ". $row["PlayerId"]. " ". $row["x_location"]. " " . $row["y_location"] . "<br>";
+$x_in_php= .$row["x_location"].;
      }
 } else {
      echo "0 results";
