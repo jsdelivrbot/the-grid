@@ -90,10 +90,10 @@ $sql = "SELECT PlayerId, x_location, y_location FROM player_location_data";
 
 
 $result = $conn->query($sql);
-$row = $result->fetch_assoc()
+
 
 $x_in_php=10;
-$x_in_php= (int)$row["x_location"];
+
 
 
 if ($result->num_rows > 0) {
