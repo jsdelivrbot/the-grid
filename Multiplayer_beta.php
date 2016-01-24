@@ -186,6 +186,8 @@ c.drawImage(samusimage,playerX, playerY, 30,60);
 //c.fillRect(opponentX, 100, 30,30);
 c.drawImage(darkside,opponentX,100,60,60);
 
+c.fillStyle="white";
+c.fillText(opponentX,200,250);
 
 if(touches[0])
 {
