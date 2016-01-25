@@ -96,6 +96,78 @@ Delta_S= n*Cvm * ln(T2/T1)
 
 ::Some changes are accompanied by a change in volume
 
+Larger volume, larger range of locations, entropy increases with volume.
+T
+
+T is constant, so delta_S = qRev/T
+
+deltaU = q+ w
+deltaU = 0 for isothermal expansion.  
+so q = -w
+
+extrapolation::
+
+qRev=-wRev
+
+wRev=-nRT ln(V2/V1)
+
+deltaS = deltaQRev/T
+
+-wRev/T
+
+nRTln(V2/V1)/T = nRln(V2/V1)
+
+when delta V2 is positive, entropy increase
+
+
+
+Isothermal compression: deltaS = nRln(P1/P2)
+
+Pressure inversely related to volume. ::How do we find a reversible path?
+
+
+
+To calculate entropy, find a reversible path between final and initial states.  Entropy is a state function.
+
+
+
+
+
+
+
+Entropy of vaporization::delta_S vaporization = deltaH vapor atom / T boiling
+
+Standard entropy of vaporization: near 85 J/K Mol
+
+Trouton's rule
+
+Increase in positional disorder occurs.
+
+
+
+Fusion: freezing, melting
+
+
+Delta_S = deltaH enthalpy fusion/ T freezing
+
+
+
+::Third Law of Thermodynamics
+
+
+absolute entropy at any temperature
+
+Boltzmann:: S= k ln W
+
+Entropy is zero approaching perfect crystal
+
+
+statistical entropy
+
+
+
+
+
 
 
 
