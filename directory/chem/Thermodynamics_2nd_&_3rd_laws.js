@@ -20,7 +20,7 @@ External_influence:'absent';
 ::energy and matter tend to disperse in a disorderly fashion
 
 ::low entropy: little disorder
-::high entropy: Greta disorder
+::high entropy: Great disorder
 
 ::entropy of an [isolated] system increase.bind spontaneous change
 
@@ -115,9 +115,9 @@ deltaS = deltaQRev/T
 
 -wRev/T
 
-nRTln(V2/V1)/T = nRln(V2/V1)
+nR*T*ln(V2/V1)/T = nRln(V2/V1)
 
-when delta V2 is positive, entropy increase
+when delta V is positive, entropy increase
 
 
 
