@@ -163,6 +163,89 @@ Entropy is zero approaching perfect crystal
 
 
 statistical entropy
+W= arrangements
+
+Entropy from Boltzmann: statistical entropy
+
+::Read more on micro states 
+
+p.330
+
+Closeness of Boltzmann clay location, experimental value
+
+Standard molar entropies
+
+Standard Reaction entropies
+
+
+Total entropy change: change of system + change of surroundings
+
+Delta_S surroundings = -deltaH /T  Constant temperature and pressure
+
+
+
+Clausius inequality:: 
+
+read p.344
+
+Entropy can't decrease in an isolated system
+
+
+Equilibrium p. 346-347
+
+
+
+::Gibbs free energy
+
+State function:
+
+Delta_S total= delta_S sys -deltaH/T
+constant temperature and pressure
+
+G= H -TS 
+
+Delta_G/T = deltaH/T -deltaS
+
+
+delta_G = -T delta_S tot
+
+
+At constant pressure and temperature, spontaneous change comes with decreasing Gibbs free energy
+
+
+provided that temperature and pressure are constant, we can predict spontaneity of the process solely in terms of the thermodynamic properties of the system
+
+Equilibrium:
+
+Delta_G = 0 at constant temperature and pressure
+
+
+
+Gibbs free energy of reaction
+
+Change in Gibbs = Gibbs products-Gibbs Reactants
+
+
+Standard Gibbs
+Standard state: 1 bar
+
+
+Does not change as reaction proceeds
+
+
+Gibbs formation
+
+Thermodynamically stable/unstable compound
+
+
+Nonlabile, labile, inert
+
+Nonexpansion work: Gibbs 
+
+
+
+
+
 
 
 
