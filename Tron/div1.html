@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+ 
+@font-face {
+    font-family: Exo-Black;
+    src: url("http://wikifoundryattachments.com/FHi-5L0J-KiEE5MVGZOstQ93444");
+}
+ 
+@keyframes rise
+{
+from{ transform: translate(0px,0px);
+filter: blur(10px);}
+to{transform: translate(0px,-50px);
+filter: blur(0px);}
+}
+ 
+@keyframes rise
+{
+from{ transform: translate(0px,0px);
+-webkit-filter: blur(10px);}
+to{transform: translate(0px,-50px);
+-webkit-filter: blur(0px);}
+}
+ 
+@keyframes deblur
+{
+from{ 
+filter: blur(0px);
+-webkit-filter: blur(0px);
+}
+to{
+filter: blur(10px);
+-webkit-filter: blur(10px);
+}
+}
+ 
+@-webkit-keyframes deblur
+{
+from{ 
+-webkit-filter: blur(0px);}
+to{
+-webkit-filter: blur(10px);}
+}
+ 
+@keyframes deblur2
+{
+from{ 
+filter: blur(10px);
+-webkit-filter: blur(10px);
+}
+to{
+filter: blur(0px);
+-webkit-filter: blur(0px);
+}
+}
+ 
+@-webkit-keyframes deblur2
+{
+from{ 
+-webkit-filter: blur(10px);
+}
+to{
+-webkit-filter: blur(0px);
+}
+}
+ 
+#backdrop
+{
+position: absolute;
+top: 0px;
+left: 0px;
+width: 500px;
+height: 500px;
+-webkit-animation: deblur 3s forwards linear;
+animation: deblur 3s forwards linear;
+}
+ 
+#players{
+position: absolute;
+top: 200px;
+left: -30px;
+width: 600px;
+height: 350px;
+-webkit-animation: rise 3s forwards linear;
+animation: rise 3s forwards linear;
+ 
+}
+ 
+ 
+#logo
+{
+position: absolute;
+top: 0px;
+left: 160px;
+width: 150px;
+height: 50px;
+-webkit-animation: deblur2 3s forwards linear;
+animation: deblur2 3s forwards linear;
+}
+ 
+#playbutton
+{
+position: absolute;
+top: 150px;
+left: 150px;
+width: 165px;
+height: 35px;
+background-color: orange;
+color: white;
+text-align: center;
+padding-top: 0px;
+-webkit-animation: deblur2 3s forwards linear;
+animation: deblur2 3s forwards linear;
+ 
+font-family: Exo-Black;
+font-size: 25px;
+border-radius: 5px;
+}
+#playbutton:hover
+{
+background-color: white;
+color: orange;
+}
+a{
+color: inherit;
+}
+ 
+</style>
+</head>
+ 
+<body>
+<script>
+var theme1 = new Audio();
+theme1.src="http://legoattachments3.pbworks.com/w/file/fetch/105367977/The%20Division%20-%20Take%20Back%20New%20York%20%5BOST%5D.mp3";
+theme1.play();
+ 
+var sound1= new Audio();
+sound1.src="http://wikifoundryattachments.com/KY1NB6o2RInroH_cpPb8Sw64165";
+ 
+ 
+function consolesound()
+{
+sound1.currentTime=0;
+sound1.play();
+}
+ 
+</script>
+
+<div style="position: absolute; top: 0px; left: 0px; height:700px; width:600px; background-color: black;">
+<img id="backdrop" src="http://image.wikifoundry.com/image/3/9d039c4fafeee19a2f5754778b0c3f14">
+<img id="players" src="http://image.wikifoundry.com/image/3/4a6a74217b6bfe8462cd180d9bc2563e">
+<img id="logo" src="http://image.wikifoundry.com/image/3/a7bc7ba602e94ce3b3a6243ed0e10358">
+<div style="position: absolute; top: 450px; left: 0px; width: 600px; height: 200px; background-color: black;"></div>
+<div id="playbutton" onmouseenter="consolesound()"><a style="text-decoration: none;" target="_blank" href="http://tomclancy-thedivision.ubi.com/game/en-us/home/">Play</a></div>
+</div>
+
+ 
+ 
+ 
+ 
+</body>
+
+</html>
