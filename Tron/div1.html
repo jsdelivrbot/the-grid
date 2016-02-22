@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -131,13 +132,15 @@ color: inherit;
 </style>
 </head>
  
-<body onmouseover="begin()">
+<body >
 <script>
 var theme1 = new Audio();
 theme1.src="http://legoattachments3.pbworks.com/w/file/fetch/105367977/The%20Division%20-%20Take%20Back%20New%20York%20%5BOST%5D.mp3";
 function begin(){
 theme1.play();
  }
+theme1.play();
+
 var sound1= new Audio();
 sound1.src="http://wikifoundryattachments.com/KY1NB6o2RInroH_cpPb8Sw64165";
  
@@ -150,7 +153,7 @@ sound1.play();
  
 </script>
 
-<div style="position: absolute; top: 0px; left: 0px; height:700px; width:600px; background-color: black;">
+<div style="position: absolute; top: 0px; left: 0px; height:700px; width:600px; background-color: black;" onload="begin()">
 <img id="backdrop" src="http://image.wikifoundry.com/image/3/9d039c4fafeee19a2f5754778b0c3f14">
 <img id="players" src="http://image.wikifoundry.com/image/3/4a6a74217b6bfe8462cd180d9bc2563e">
 <img id="logo" src="http://image.wikifoundry.com/image/3/a7bc7ba602e94ce3b3a6243ed0e10358">
