@@ -263,7 +263,8 @@ for (var i = 0; i < light_walls.length - 1; i++) {
 //
 if(light_wall_count>3)
 {
-light_walls.push([Math.floor(playerX/10)*10-10,playerY]);
+light_walls.push([playerX,playerY]);
+
 //light_walls.push([Math.floor(playerX/10)*10-10,playerY-10]);
 c.fillStyle="white";
 c.fillText(Math.floor(playerX/10),playerX,playerY-50);
