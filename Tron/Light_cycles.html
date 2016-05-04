@@ -92,7 +92,7 @@ var matches=0;
 
 var hudimage=new Image();
 hudimage.src="http://img10.deviantart.net/91c4/i/2012/292/f/5/hud_02_png_version_by_a1samurai-d5i8u7z.png";
-enemies=[[10,10],[10,100]];
+enemies=[[10,10]];
 
 setupCanvas();
 
@@ -155,21 +155,26 @@ c.fillStyle="white";
 
 //c.fillText(matches+" "+currentWall,playerX, playerY-70);
 
+
 for (var i=0;i<enemies.length;i++)
 {
+
+
 if(enemies[i][0]<Math.floor(playerX))
 {
 enemies[i][0]+=1;
 }
+
+
 if(enemies[i][0]>Math.floor(playerX))
 {
 enemies[i][0]-=1;
 }
-if(enemies[i][1]<Math.floor(playerY)
+if(enemies[i][1]<Math.floor(playerY))
 {
 enemies[i][1]+=1;
 }
-if(enemies[i][1]>Math.floor(playerY)
+if(enemies[i][1]>Math.floor(playerY))
 {
 enemies[i][1]-=1;
 }
@@ -179,6 +184,7 @@ c.fillRect(enemies[i][0],enemies[i][1],10,10);
 
 
 }
+
 
 
 for (i=0; i<lasers.length;i++)
@@ -240,13 +246,30 @@ lasers.splice(i,1);
 }
 }
 
+for(var i=0;i<lasers.length;i++){
+for(var j=0;j<enemy_light_walls.length;j++){
+if(lasers[i][0]<=enemy_light_walls[j][0]+10
+&& enemy_light_walls[j][0]<=lasers[i][0]+5
+&& lasers[i][1]<=enemy_light_walls[j][1]+10
+&& enemy_light_walls[j][1]<=lasers[i][1]+5
+){
+enemy_light_walls.splice(j,1);
+lasers.splice(i,1);
+}
+
+}
+}
+
+
 //orange
+
 c.fillStyle="rgba(255,165,0,0.5)";
 
 for(var i=0;i<enemy_light_walls.length;i++)
 {
 c.fillRect(enemy_light_walls[i][0],enemy_light_walls[i][1],10,10);
 }
+
 
 light_wall_count+=1;
 //c.drawImage(samusimage,playerX, playerY, 30,60);
@@ -310,7 +333,6 @@ if(light_wall_count>1)
 
 
 var array1=light_walls;
-
 for(var i=0;i<array1.length;i++){
 if(array1[i][0] == currentWall[0]&&
 array1[i][1] == currentWall[1]
@@ -319,10 +341,35 @@ matches+=1;
 }
 }
 
+var matches2=0;
+for(var i=0;i<enemies.length;i++)
+{
+
+var currentWall2=[Math.floor(enemies[i][0]/10)*10,Math.floor(enemies[i][1]/10)*10];
+
+for(var i=0;i<enemy_light_walls.length;i++){
+
+if(enemy_light_walls[i][0] == currentWall2[0]&&
+enemy_light_walls[i][1] == currentWall2[1]
+){
+matches2+=1;
+}
+}
+
+if(matches2<1)
+{
+enemy_light_walls.push(currentWall2);
+}
+matches2=0;
+
+}
+
 if(matches < 1)
 {
 light_walls.push(currentWall);
 }
+
+
 matches=0;
 
 
