@@ -261,15 +261,16 @@ playerDirection="up";
 
 var currentWall = [Math.floor(playerX/10)*10,Math.floor(playerY/10)*10];
 
-for(var i=0;i<light_walls;i++){
-if(light_walls[i] != currentWall){
+for(var i=0;i<light_walls.length;i++){
+if(light_walls[i] !== currentWall){
 light_walls.push(currentWall);}}
 
 //light_walls.push([Math.floor(playerX/10)*10-10,playerY-10]);
 
 c.fillStyle="white";
 c.fillText(Math.floor(playerX/10),playerX,playerY-50);
-light_wall_count=0;
+
+//light_wall_count=0;
 //}
 
 
