@@ -144,11 +144,13 @@ function draw() {
 c.clearRect(0,0,canvas.width, canvas.height); 
 
 
-c.fillStyle="white";
-c.fillText(light_walls,playerX,playerY-50);
-c.fillText(light_walls[0],playerX, playerY-60);
+var currentWall = [(Math.floor(playerX/10)*10),(Math.floor(playerY/10)*10)];
 
-c.fillText(matches,playerX, playerY-70);
+c.fillStyle="white";
+//c.fillText(light_walls,playerX,playerY-50);
+//c.fillText(light_walls[0],playerX, playerY-60);
+
+//c.fillText(matches+" "+currentWall,playerX, playerY-70);
 
 
 for (i=0; i<lasers.length;i++)
@@ -199,9 +201,9 @@ c.fillRect(light_walls[i][0],light_walls[i][1],10,10);
 for(var i=0;i<lasers.length;i++){
 for(var j=0;j<light_walls.length;j++){
 if(lasers[i][0]<=light_walls[j][0]+10
-&& light_walls[j][0]<=lasers[i][0]+20
+&& light_walls[j][0]<=lasers[i][0]+5
 && lasers[i][1]<=light_walls[j][1]+10
-&& light_walls[j][1]<=lasers[i][1]+20
+&& light_walls[j][1]<=lasers[i][1]+5
 ){
 light_walls.splice(j,1);
 lasers.splice(i,1);
@@ -265,29 +267,29 @@ playerDirection="up";
 
 
 
-var currentWall = [(Math.floor(playerX/10)*10),(Math.floor(playerY/10)*10)];
-
-if(light_wall_count>3)
+if(light_wall_count>1)
 {
 
 
 
+var array1=light_walls;
 
-for(var i=0;i<light_walls.length;i++){
-if(light_walls[i] == currentWall){
+for(var i=0;i<array1.length;i++){
+if(array1[i][0] == currentWall[0]&&
+array1[i][1] == currentWall[1]
+){
 matches+=1;
 }
-
 }
 
-if(matches != -1)
+if(matches < 1)
 {
 light_walls.push(currentWall);
+}
+matches=0;
+
 
 light_wall_count=0;
-}
-//matches=0;
-
 }
 
 
@@ -383,24 +385,24 @@ else if(touches[i].clientX > 380){
 
 if(playerDirection=="right")
 {
-lasers.push([playerX+60, playerY-5,0,10,0]);
-lasers.push([playerX+60, playerY+5,0,10,0]);
+lasers.push([playerX, playerY-5,0,10,0]);
+lasers.push([playerX, playerY+5,0,10,0]);
 
 }
 if(playerDirection=="left")
 {
-lasers.push([playerX-70, playerY-5,0,-10,0]);
-lasers.push([playerX-70, playerY+5,0,-10,0]);
+lasers.push([playerX, playerY-5,0,-10,0]);
+lasers.push([playerX, playerY+5,0,-10,0]);
 }
 if(playerDirection=="up")
 {
-lasers.push([playerX+11, playerY-10,0,0,-10]);
-lasers.push([playerX+21, playerY-10,0,0,-10]);
+lasers.push([playerX-5, playerY,0,0,-10]);
+lasers.push([playerX+5, playerY,0,0,-10]);
 }
 if(playerDirection=="down")
 {
-lasers.push([playerX+11, playerY+10,0,0,10]);
-lasers.push([playerX+21, playerY+10,0,0,10]);
+lasers.push([playerX-5, playerY,0,0,10]);
+lasers.push([playerX+5, playerY,0,0,10]);
 }
 
 
