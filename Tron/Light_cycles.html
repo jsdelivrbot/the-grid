@@ -76,6 +76,9 @@ var playerX=500;
 var playerY=100;
 var lasers=[];
 var light_walls=[[playerX,playerY]];
+
+var enemy_light_walls=[[0,0]];
+
 var playerDirection = "right";
 var light_wall_count=0;
 var samusimage2 = new Image();
@@ -89,7 +92,7 @@ var matches=0;
 
 var hudimage=new Image();
 hudimage.src="http://img10.deviantart.net/91c4/i/2012/292/f/5/hud_02_png_version_by_a1samurai-d5i8u7z.png";
-
+enemies=[[10,10],[10,100]];
 
 setupCanvas();
 
@@ -152,6 +155,31 @@ c.fillStyle="white";
 
 //c.fillText(matches+" "+currentWall,playerX, playerY-70);
 
+for (var i=0;i<enemies.length;i++)
+{
+if(enemies[i][0]<Math.floor(playerX))
+{
+enemies[i][0]+=1;
+}
+if(enemies[i][0]>Math.floor(playerX))
+{
+enemies[i][0]-=1;
+}
+if(enemies[i][1]<Math.floor(playerY)
+{
+enemies[i][1]+=1;
+}
+if(enemies[i][1]>Math.floor(playerY)
+{
+enemies[i][1]-=1;
+}
+
+c.fillStyle="orange";
+c.fillRect(enemies[i][0],enemies[i][1],10,10);
+
+
+}
+
 
 for (i=0; i<lasers.length;i++)
 {
@@ -170,7 +198,7 @@ lasers.splice(i,1);
 //c.fillStyle="green";
 //c.fillRect(playerX, playerY, 30,60);
 //c.fillStyle="white";
-//c.fillStyle="orange";
+
 c.fillStyle="cyan";
 c.fillRect(playerX,playerY,10,10);
 
@@ -191,13 +219,13 @@ c.fillRect(playerX+30,playerY+20,30,10);
 //c.fillStyle="rgba(222,227,242,0.5)";
 //cyan
 c.fillStyle="rgba(0,255,255,0.5)";
-//orange
-//c.fillStyle="rgba(255,165,0,0.5)";
+
 
 for(var i=0;i<light_walls.length;i++)
 {
 c.fillRect(light_walls[i][0],light_walls[i][1],10,10);
 }
+
 for(var i=0;i<lasers.length;i++){
 for(var j=0;j<light_walls.length;j++){
 if(lasers[i][0]<=light_walls[j][0]+10
@@ -211,6 +239,15 @@ lasers.splice(i,1);
 
 }
 }
+
+//orange
+c.fillStyle="rgba(255,165,0,0.5)";
+
+for(var i=0;i<enemy_light_walls.length;i++)
+{
+c.fillRect(enemy_light_walls[i][0],enemy_light_walls[i][1],10,10);
+}
+
 light_wall_count+=1;
 //c.drawImage(samusimage,playerX, playerY, 30,60);
 
