@@ -75,7 +75,7 @@ container;
 var playerX=500;
 var playerY=100;
 var lasers=[];
-var light_walls=[playerX,playerY];
+var light_walls=[[playerX,playerY]];
 var playerDirection = "right";
 var light_wall_count=0;
 var samusimage2 = new Image();
@@ -85,6 +85,7 @@ var samusimage=new Image();
 samusimage.src="http://2.bp.blogspot.com/-kdevsW8V4qo/Ti-uO7DKkaI/AAAAAAAAAB8/Tks3dJqaW50/s1600/samus_shoot_1.gif";
 
 var opponentX=0;
+var matches=0;
 
 var hudimage=new Image();
 hudimage.src="http://img10.deviantart.net/91c4/i/2012/292/f/5/hud_02_png_version_by_a1samurai-d5i8u7z.png";
@@ -141,6 +142,14 @@ function draw() {
 
 
 c.clearRect(0,0,canvas.width, canvas.height); 
+
+
+c.fillStyle="white";
+c.fillText(light_walls,playerX,playerY-50);
+c.fillText(light_walls[0],playerX, playerY-60);
+
+c.fillText(matches,playerX, playerY-70);
+
 
 for (i=0; i<lasers.length;i++)
 {
@@ -254,24 +263,32 @@ playerDirection="up";
 
 
 
-//
 
-//if(light_wall_count>3)
-//{
 
-var currentWall = [Math.floor(playerX/10)*10,Math.floor(playerY/10)*10];
+var currentWall = [(Math.floor(playerX/10)*10),(Math.floor(playerY/10)*10)];
+
+if(light_wall_count>3)
+{
+
+
+
 
 for(var i=0;i<light_walls.length;i++){
-if(light_walls[i] !== currentWall){
-light_walls.push(currentWall);}}
+if(light_walls[i] == currentWall){
+matches+=1;
+}
 
-//light_walls.push([Math.floor(playerX/10)*10-10,playerY-10]);
+}
 
-c.fillStyle="white";
-c.fillText(Math.floor(playerX/10),playerX,playerY-50);
+if(matches != -1)
+{
+light_walls.push(currentWall);
 
-//light_wall_count=0;
-//}
+light_wall_count=0;
+}
+//matches=0;
+
+}
 
 
 }
