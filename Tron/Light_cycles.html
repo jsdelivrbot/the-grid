@@ -105,9 +105,21 @@ enemies=[
 
 */
 
+var queue=[];
+
+
+
+function ManhattanDistance(Point, Goal)
+	{	
+// linear movement - no diagonals - just cardinal directions (NSEW)
+		
+return Math.abs(Point[0] - Goal[0]) + Math.abs(Point[1] - Goal[1]);
+	}
 
 function PathFinder(Start, End, Obstacles )
 {
+
+
 var up=[0,-1];
 var down=[0,1];
 var left=[-1,0];
@@ -234,6 +246,15 @@ enemies[i][1]+=1;
 if(enemies[i][1]>Math.floor(playerY))
 {
 enemies[i][1]-=1;
+
+if(
+light_walls[(Math.floor(enemies[i][0]/10)*10)+20,(Math.floor(enemies[i][1]/10)*10)]
+)
+{
+enemies[i][1]+=5;
+enemies[i][0]-=10;
+}
+
 }
 
 c.fillStyle="orange";
