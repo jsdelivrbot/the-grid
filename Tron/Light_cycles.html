@@ -92,7 +92,7 @@ var matches=0;
 
 var hudimage=new Image();
 hudimage.src="http://img10.deviantart.net/91c4/i/2012/292/f/5/hud_02_png_version_by_a1samurai-d5i8u7z.png";
-enemies=[[10,10]];
+enemies=[[20,30,0],[20,50,0],[20,100,0]];
 
 setupCanvas();
 
@@ -148,26 +148,28 @@ c.clearRect(0,0,canvas.width, canvas.height);
 
 
 //light walls
-var matches2=0;
+//var matches2=0;
+
 for(var i=0;i<enemies.length;i++)
 {
+enemies[i][2]=0;
 
 var currentWall2=[Math.floor(enemies[i][0]/10)*10,Math.floor(enemies[i][1]/10)*10];
 
-for(var i=0;i<enemy_light_walls.length;i++){
+for(var j=0;j<enemy_light_walls.length;j++){
 
-if(enemy_light_walls[i][0] == currentWall2[0]&&
-enemy_light_walls[i][1] == currentWall2[1]
+if(enemy_light_walls[j][0] == currentWall2[0]&&
+enemy_light_walls[j][1] == currentWall2[1]
 ){
-matches2+=1;
+enemies[i][2]+=1;
 }
 }
 
-if(matches2<1)
+if(enemies[i][2]<1)
 {
 enemy_light_walls.push(currentWall2);
 }
-matches2=0;
+enemies[i][2]=0;
 
 }
 
@@ -274,25 +276,31 @@ light_walls.splice(i,1);
 enemies.splice(j,1);
 }
 
+}
+}
+
+
+for(var i=0; i < enemy_light_walls.length;i++)
+{
+for(var a=0; a< enemies.length;a++)
+{
+
 //enemy light walls stuff
 
 if(
-enemy_light_walls[i][0]<= enemies[j][0]+10
-&& enemies[j][0] <= enemy_light_walls[i][0]+10
-&& enemy_light_walls[i][1] <= enemies[j][1] + 10
-&& enemies[j][1] <= enemy_light_walls[i][1] +10
+enemy_light_walls[i][0]< enemies[a][0]+1
+&& enemies[a][0] < enemy_light_walls[i][0]+1
+&& enemy_light_walls[i][1] < enemies[a][1] + 1
+&& enemies[a][1] < enemy_light_walls[i][1] +1
 )
 {
 enemy_light_walls.splice(i,1);
-enemies.splice(j,1);
+enemies.splice(a,1);
 }
 
-
-
+}
 }
 
-
-}
 
 for(var i=0;i<lasers.length;i++){
 for(var j=0;j<light_walls.length;j++){
