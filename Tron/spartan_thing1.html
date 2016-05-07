@@ -696,11 +696,11 @@ var shipparts =
 
 var ship2parts = 
 [[0, 0, 200, 10, "green"],
-//[195, 0, 80, 80, "green"],
+[195, 0, 80, 80, "green"],
 [50, 70, 180, 10, "green"],
 [250, 10, 50, 35, "#33CCFF"],
-[195, 30, 100, 30, "green"],
-[50, 50, 10, 40, "green"]
+[195, 30, 100, 30, "green"]
+//[50, 50, 10, 40, "green"]
 ];
 
 astroship2XPos = 2100;
@@ -4906,7 +4906,7 @@ if (aliens[i][8] === "at wall" && aliens[i][9] === "onground")
 {
 aliens[i][5] = -15;
 }
-else if ( playerYPos < aliens[i][1] && aliens[i][9] === "onground" && aliens[i][2] === "inactivesentry" )
+else if ( playerYPos-10 < aliens[i][1] && aliens[i][9] === "onground" && aliens[i][2] === "inactivesentry" )
 {
 aliens[i][5] = -10;
 }
@@ -4942,12 +4942,12 @@ for ( var i = 0; i < aliens.length; i++ )
 if (aliens[i][2] === "activesentry" && playerstealth === "uncloaked" )
 {
 
-if (playerXPos < aliens[i][0]-50)
+if (playerXPos < aliens[i][0]-10)
 {
 aliens[i][4] = -3;
 aliens[i][10] = "left";
 }
-else if (playerXPos > aliens[i][0]+ 50)
+else if (playerXPos > aliens[i][0]+ 10)
 {
 aliens[i][4] = 3;
 aliens[i][10] = "right" ;
