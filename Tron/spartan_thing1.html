@@ -696,7 +696,7 @@ var shipparts =
 
 var ship2parts = 
 [[0, 0, 200, 10, "green"],
-[195, 0, 80, 80, "green"],
+//[195, 0, 80, 80, "green"],
 [50, 70, 180, 10, "green"],
 [250, 10, 50, 35, "#33CCFF"],
 [195, 30, 100, 30, "green"],
@@ -4235,8 +4235,8 @@ spawnenemy = "active";
 if (spawnenemy === "active" && enemies.length < 10 && numberofenemies < 10)
 {
 numberofenemies += 1;
-enemies.push([numberofenemies*30 + 900, 50, "sentry", 25, 0, 0, [], 0, 0, 0, "right", "aliensoldier" ]); 
-enemies.push([numberofenemies*30 + 3500, 350, "sentry", 25, 0, 0, [], 0, 0, 0, "right", "aliensoldier" ]); 
+enemies.push([numberofenemies*30 + 900, 50, "sentry", 15, 0, 0, [], 0, 0, 0, "right", "aliensoldier" ]); 
+enemies.push([numberofenemies*30 + 3500, 350, "sentry", 15, 0, 0, [], 0, 0, 0, "right", "aliensoldier" ]); 
 }
 
 
@@ -4311,10 +4311,13 @@ else
 enemies[i][2] = "sentry";
 }
 enemies[i][7]+=1;
-if (enemies[i][2] === "activesentry" && enemies[i][6].length < 5 && enemies[i][7] >= 15 && enemies[i][1] < 500  )
+
+if (enemies[i][6].length < 5 && enemies[i][7] >= 15 && enemies[i][1] < 500  )
 {
+	if(enemies[i][2] === "activesentry" ){
 if ( playerXPos <= enemies[i][0] && playerYPos <= enemies[i][1]+30 && enemies[i][1] <= playerYPos + 30)
 {
+	
 enemies[i][6].push([enemies[i][0]-25, Math.floor(Math.random()*(20))+enemies[i][1], -15, 0]);
 hitarray2.push([ enemies[i][0], Math.floor(Math.random()*(20))+enemies[i][1],10, 1]);
 enemies[i][7] = 0;
@@ -4325,6 +4328,13 @@ enemies[i][6].push([enemies[i][0], Math.floor(Math.random()*(20))+enemies[i][1],
 hitarray2.push([enemies[i][0]+20, Math.floor(Math.random()*(20))+enemies[i][1], 10, 1]);
 enemies[i][7] = 0;
 }
+}
+if(enemies[i][3]<10)
+{
+enemies[i][6].push([enemies[i][0], Math.floor(Math.random()*(20))+enemies[i][1], 15, 0]);
+enemies[i][6].push([enemies[i][0], Math.floor(Math.random()*(20))+enemies[i][1], -15, 0]);
+}
+
 }
 
 for ( var j=0; j < enemies[i][6].length; j++)
@@ -5324,10 +5334,10 @@ rogersounds[i].volume = 1;
 //add new stuff
 if (theme1.currentTime==0 || theme1.ended)
 {
-theme1.currentTime = 0;
+//theme1.currentTime = 0;
 theme1.play();
 }
-theme1.play();
+//theme1.play();
 
 var r1 = 35 + 10-Math.random()*20
 var planeRotation1 = r1 *Math.PI/180;
