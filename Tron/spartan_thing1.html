@@ -124,6 +124,7 @@ var movementSpeed=3; // the speed we are going to move, in pixels per frame
 var playerXSpeed=0; // player horizontal speed, in pixels per frame
 var playerYSpeed=0; // player vertical speed, in pixels per frame
 
+var RallyPoints=[];
 
 var gravityForce=0.5; // gravity acceleration, in pixels per frame per frame
 var maxFallingSpeed=5; // maximum falling speed
@@ -5332,9 +5333,17 @@ rogersounds[i].volume = 1;
 
 
 //add new stuff
+
+if(nkeypressed)
+{
+	RallyPoints=[[playerXPos,playerYPos]];
+}
+
 if (theme1.currentTime==0 || theme1.ended)
 {
-//theme1.currentTime = 0;
+	if(theme1.ended){
+theme1.currentTime = 0;
+}
 theme1.play();
 }
 //theme1.play();
@@ -5425,12 +5434,29 @@ else if (squadbehavior === "retreating")
 {
 guards[i][4] = -3;
 }
+else if(squadbehavior === "tacticalmaneuver")
+{
+	if(RallyPoints[0]){
+if(guards[i][0]<RallyPoints[0][0])
+{
+	guards[i][4]  = 3;
+}
+if(guards[i][0] >RallyPoints[0][0])
+{
+	guards[i][4]  = -3;
+}
+
+}	
 
 }
 
-if (squadbehavior === "tacticalmaneuver" )
+}
+
+if (squadbehavior === "tacticalmaneuver1" )
 {
-guards[0][4]  = -0.4;
+	
+
+
 if( astroguard2L == 0 && mkeypressed)
 {
 guardlasers.push([ guards[1][0], guards[1][1], -10]);
