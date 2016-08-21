@@ -807,7 +807,7 @@ function Game() {
 			this.ship = new Ship();
 			// Set the ship to start near the bottom middle of the canvas
 			this.shipStartX = this.shipCanvas.width/2 - imageRepository.spaceship.width;
-			this.shipStartY = this.shipCanvas.height/4*3 + imageRepository.spaceship.height*2;
+			this.shipStartY = this.shipCanvas.height/4*3 + imageRepository.spaceship.height*2-50;
 			this.ship.init(this.shipStartX, this.shipStartY,
 			               imageRepository.spaceship.width, imageRepository.spaceship.height);
 			
