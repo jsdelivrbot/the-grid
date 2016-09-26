@@ -15,8 +15,8 @@
         "blending":"NormalBlending",
         "depthWrite":true,
         "opacity":1,
-        "colorDiffuse":[0.8,0.8,0.8],
-        "colorEmissive":[100,100,100]
+        "colorDiffuse":[1,1,1],
+        "colorEmissive":[1000,1000,1000]
     },{
         "visible":true,
         "mapDiffuseWrap":["RepeatWrapping","RepeatWrapping"],
@@ -33,8 +33,7 @@
         "depthWrite":true,
         "mapDiffuse":"lightsaber_blue_glow.png",
         "opacity":1,
-        "side":2,
-        "doubleSided":true,
+        "side":"DoubleSide",
         "colorDiffuse":[0.64,0.64,0.64],
         "colorEmissive":[0,0,0]
     },{
