@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/three.min.js"></script>
+<style>
+body{margin: 0; overflow: hidden;}
+canvas {width: 100%; height: 100%}
+</style>
+
+</head>
+<body>
+
+<script>
+var scene, camera, renderer;
+var controls, light, clock = new THREE.Clock();
+var loader, vlad, idle, rest, run, handler = THREE.AnimationHandler.CATMULLROM;
+var width = window.innerWidth, height= window.innerHeight;
+
+init();
+aniimate();
+
+function init(){
+scene = new THREE.Scene();
+camera = new THREE.PerspectiveCamera(65, width/height, 0.1, 1000);
+renderer = new THREE.WebGLRenderer();
+renderer.setSize(width, height);
+renderer.setClearColor(0x000000);
+document.body.appendChild(renderer.domElement);
+
+light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(10,10,10);
+scene.add(light);
+
+document.addEventListener('keydown', keyBoard, false);
+
+loader = new THREE.JSONLoader();
+loader.load('stormtrooper_1.json', addModel1);
+}
+
+function addModel1(geometry, materials){
+materials.forEach(function(mat){
+mat.skinning = true;});
+
+vlad = new THREE.SkinnedMesh(geometry, new THREE.MeshFaceMaterial(materials));
+
+idle = new THREE.Animation(vlad, geometry.animations[0], handler);
+rest = new THREE.Animation(vlad, geometry.animations[1], handler);
+run = new THREE.Animation(vlad, geometry.animations[2], handler);
+
+
+idle.play();
+scene.add(vlad);
+
+}
+
+function animate(){
+requestAnimationFrame(animate);
+var delta = clock.getDelta();
+THREE.AnimationHandlder.update(delta);
+render();
+
+}
+
+function render(){
+renderer.clear();
+renderer.render(scene, camera);
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
+
