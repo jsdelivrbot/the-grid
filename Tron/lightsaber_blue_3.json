@@ -28,7 +28,7 @@
         "depthTest":true,
         "DbgName":"blue glow",
         "DbgIndex":4,
-        "transparent":false,
+        "transparent":true,
         "blending":"AdditiveBlending",
         "depthWrite":true,
         "mapDiffuse":"lightsaber_blue_glow.png",
