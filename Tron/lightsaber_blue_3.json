@@ -29,10 +29,10 @@
         "DbgName":"blue glow",
         "DbgIndex":4,
         "transparent":false,
-        "blending":"NormalBlending",
+        "blending":"AdditiveBlending",
         "depthWrite":true,
         "mapDiffuse":"lightsaber_blue_glow.png",
-        "opacity":0,
+        "opacity":1,
         "colorDiffuse":[0.64,0.64,0.64],
         "colorEmissive":[0,0,0]
     },{
