@@ -33,6 +33,7 @@
         "depthWrite":true,
         "mapDiffuse":"lightsaber_blue_glow.png",
         "opacity":1,
+        "side":"DoubleSide",
         "colorDiffuse":[0.64,0.64,0.64],
         "colorEmissive":[0,0,0]
     },{
