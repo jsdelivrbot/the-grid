@@ -51,7 +51,7 @@
         "blending":"NormalBlending"
     },{
         "mapDiffuseAnisotropy":1,
-        "opacity":1,
+        "opacity":0,
         "mapDiffuseRepeat":[1,1],
         "colorDiffuse":[0,0,0],
         "DbgColor":238,
